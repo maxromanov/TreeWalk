@@ -236,4 +236,9 @@
     <PostBuildEvent>
     </PostBuildEvent>
   </PropertyGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties BuildVersion_BuildVersioningStyle="None.None.Increment.Increment" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_UpdateFileVersion="True" BuildVersion_BuildAction="ReBuild" BuildVersion_StartDate="2015/1/1" BuildVersion_ConfigurationName="Any" BuildVersion_UseUniversalClock="True" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

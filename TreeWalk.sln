@@ -44,6 +44,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+		BuildVersion_StartDate = 2000/1/1
 		SolutionGuid = {0E9EFD3B-D237-4E42-B616-6A039F46E8A2}
 	EndGlobalSection
 EndGlobal

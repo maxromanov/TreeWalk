@@ -10,13 +10,13 @@ namespace TreeWalk
     public class DifAndMerge : OutputProcessor
     {
         public InputTreeNode target = null;
-        private InputTreeNode difference = null;
+        private InputTreeNode difference = null;        
 
         private InputTreeNode inserts = null;
         private InputTreeNode updates = null;
         private InputTreeNode deletes = null;
 
-        private OutputProcessorType processorType = OutputProcessorType.DifAndMerge;
+        private OutputProcessorType processorType = OutputProcessorType.Merge;
 
         public DifAndMerge(string OutputFile,OutputProcessorType procType)
         {
