@@ -1,0 +1,10 @@
+﻿{
+  "id": "js2ps",
+  "queries": {
+    "tender_gate_rule": {
+      "query": "$.releases[*].tender",
+      "query_type": "jsonpath",
+      "script": "tender.ps1"
+    }
+  }
+}

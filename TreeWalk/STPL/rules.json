@@ -1,0 +1,52 @@
+﻿{
+  "id": "tpl_dir_copy",
+  "queries": {
+    "sln_ignore": {
+      "query": "*.sln",
+      "query_type": "WildcardPattern",
+      "result": "false"
+    },
+    "node_modules_ignore": {
+      "query": "node_modules",
+      "query_type": "WildcardPattern",
+      "result": "false"
+    },
+    "skip_build_results": {
+      "query": "public\\*",
+      "query_type": "WildcardPattern",
+      "result": "false"
+    },
+    "vs_ignore": {
+      "query": ".vs",
+      "query_type": "WildcardPattern",
+      "result": "false"
+    },
+	"config_ignore": {
+	  "query": "index.xml",
+	  "query_type": "WildcardPattern",
+	  "result": "false"
+	},
+	"git_ignore":{
+	  "query": ".git",
+	  "query_type": "WildcardPattern",
+	  "result":"false"
+	},
+    "ntpldata_ignore": {
+      "query": "*.ntpldata",
+      "query_type": "WildcardPattern",
+      "result": "false"
+    },
+    "ntpl": {
+      "query": "*.ntpl",
+      "query_type": "WildcardPattern",
+      "result": "true",
+      "script": "ntplext.ps1"
+    },
+    "default": {
+      "query": "*.*",
+      "query_type": "WildcardPattern",
+      "result": "true",
+      "script": "copy.ps1"
+    }
+  }
+}

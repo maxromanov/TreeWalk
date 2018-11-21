@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Test" type="Test"/>
+  <xs:complexType name="Test">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="old" type="old" />  
+      <xs:element name="new" type="new"/>              
+      <xs:element name="upd" type="upd"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="old">
+    <xs:attribute name="id" type="xs:ID"/>
+  </xs:complexType>
+
+  <xs:complexType name="new">
+    <xs:attribute name="id" type="xs:ID"/>
+  </xs:complexType>
+
+  <xs:complexType name="upd">
+    <xs:attribute name="id" use="required" type="xs:ID"/>
+    <xs:attribute name="name" type="xs:string"/>
+  </xs:complexType>
+
+
+</xs:schema>

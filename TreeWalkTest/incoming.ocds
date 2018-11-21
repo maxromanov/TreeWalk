@@ -1,0 +1,21 @@
+{
+  "$schema": "http://standard.open-contracting.org/latest/en/release-package-schema.json",
+  "version": "1.1",
+  "extensions": [
+    "http://digitaltwins.info/schema/semantic/extension.json"
+  ],
+  "releases": [
+    {
+      "ocid": "job_~01fcc6d7599de60c46",
+      "id": "job_~01fcc6d7599de60c46",
+      "date": "release_date",
+      "tag": "",
+      "initiationType": "tender",
+      "tender": {
+        "id": "job_~01fcc6d7599de60c46",
+        "title": "Editing 50,000 word book on motherhood",
+        "description": "I have a memoir type book written by my deceased mother and aunt that needs to be edited. It is written in first person instruction as old mothers to new mothers. The writing is reasonably clean and full of stories (my aunt is a minor published author and active blogger). \\n\\nThe book needs to be edited for both flow, duplication, etc. It is arraigned into 10 chapters but tends to jump around a little. It could probably be put into 15+ chapters on different aspects of mothering and encouragement to mothers. \\n\\nI would like to pull this together and present it to my aunt who is grieving the loss of her sister to help her perhaps see the way to continue writing this book (and secondly to have for my siblings). This will not be a final edit, but something to re-energize the process.\\n\\nSee sample below"
+      }
+    }
+  ]
+}

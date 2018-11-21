@@ -1,0 +1,1482 @@
+{
+  "$schema": "http://standard.open-contracting.org/latest/en/release-package-schema.json",
+  "version": "1.1",
+  "extensions": [
+    "https://raw.githubusercontent.com/open-contracting/ocds_location_extension/v1.1.1/extension.json",
+    "http://digitaltwins.info/schema/semantic/extension.json"
+  ],
+  "releases": [
+    {
+      "ocid": "job_~012f1a5fe770bb6afe",
+      "id": "job_~012f1a5fe770bb6afe",
+      "date": "release_date",
+      "initiationType": "tender",
+      "tender": {
+        "id": "job_~012f1a5fe770bb6afe",
+        "title": "Video editor for boat sales",
+        "description": "We are under contract by a local boat broker to film 4K aerials and interior of each boat.  The client wants it to not only be informative but cinematic as well.  We will be capturing the data and will expect you to not only edit but color correct as well. Mild effects needed also mild text.\\n\\nThis job was posted from a mobile device, so please pardon any typos or any missing details.",
+        "description_semantic": {
+          "sentences": [
+            {
+              "tokensCount": 0,
+              "tokens": [
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "PoS",
+                  "minorType": "Article",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "DT",
+                      "kind": "word",
+                      "length": 3,
+                      "text": "The",
+                      "orth": "upperInitial",
+                      "annotype": "Token",
+                      "startPos": 92,
+                      "endPos": 95,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 92,
+                  "endPos": 95,
+                  "features": {
+                    "id": "2"
+                  }
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NN",
+                  "kind": "word",
+                  "length": 6,
+                  "text": "client",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 96,
+                  "endPos": 102,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "VBZ",
+                  "kind": "word",
+                  "length": 5,
+                  "text": "wants",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 103,
+                  "endPos": 108,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "country_code",
+                  "minorType": "",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "PRP",
+                      "kind": "word",
+                      "length": 2,
+                      "text": "it",
+                      "orth": "lowercase",
+                      "annotype": "Token",
+                      "startPos": 109,
+                      "endPos": 111,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 109,
+                  "endPos": 111,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "country_code",
+                  "minorType": "",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "TO",
+                      "kind": "word",
+                      "length": 2,
+                      "text": "to",
+                      "orth": "lowercase",
+                      "annotype": "Token",
+                      "startPos": 112,
+                      "endPos": 114,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 112,
+                  "endPos": 114,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "RB",
+                  "kind": "word",
+                  "length": 3,
+                  "text": "not",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 115,
+                  "endPos": 118,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "RB",
+                  "kind": "word",
+                  "length": 4,
+                  "text": "only",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 119,
+                  "endPos": 123,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "country_code",
+                  "minorType": "",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "VB",
+                      "kind": "word",
+                      "length": 2,
+                      "text": "be",
+                      "orth": "lowercase",
+                      "annotype": "Token",
+                      "startPos": 124,
+                      "endPos": 126,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 124,
+                  "endPos": 126,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "JJ",
+                  "kind": "word",
+                  "length": 11,
+                  "text": "informative",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 127,
+                  "endPos": 138,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "PoS",
+                  "minorType": "Conjunction",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "CC",
+                      "kind": "word",
+                      "length": 3,
+                      "text": "but",
+                      "orth": "lowercase",
+                      "annotype": "Token",
+                      "startPos": 139,
+                      "endPos": 142,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 139,
+                  "endPos": 142,
+                  "features": {
+                    "id": "2"
+                  }
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "JJ",
+                  "kind": "word",
+                  "length": 9,
+                  "text": "cinematic",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 143,
+                  "endPos": 152,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "country_code",
+                  "minorType": "",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "IN",
+                      "kind": "word",
+                      "length": 2,
+                      "text": "as",
+                      "orth": "lowercase",
+                      "annotype": "Token",
+                      "startPos": 153,
+                      "endPos": 155,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 153,
+                  "endPos": 155,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "RB",
+                  "kind": "word",
+                  "length": 4,
+                  "text": "well",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 156,
+                  "endPos": 160,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": ".",
+                  "kind": "punctuation",
+                  "length": 1,
+                  "text": ".",
+                  "annotype": "Token",
+                  "startPos": 160,
+                  "endPos": 161,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "stop",
+                  "minorType": "",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "PRP",
+                      "kind": "word",
+                      "length": 2,
+                      "text": "We",
+                      "orth": "upperInitial",
+                      "annotype": "Token",
+                      "startPos": 163,
+                      "endPos": 165,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 163,
+                  "endPos": 165,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "Verb",
+                  "minorType": "Modal",
+                  "internal": [   {
+                      "type": "SemanticToken",
+                      "category": "MD",
+                      "kind": "word",
+                      "length": 4,
+                      "text": "will",
+                      "orth": "lowercase",
+                      "annotype": "Token",
+                      "startPos": 166,
+                      "endPos": 170,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 166,
+                  "endPos": 170,
+                  "features": {
+                    "id": "1",
+                    "tence": "FutureSimple"
+                  }
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "country_code",
+                  "minorType": "",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "VB",
+                      "kind": "word",
+                      "length": 2,
+                      "text": "be",
+                      "orth": "lowercase",
+                      "annotype": "Token",
+                      "startPos": 171,
+                      "endPos": 173,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 171,
+                  "endPos": 173,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "VBG",
+                  "kind": "word",
+                  "length": 9,
+                  "text": "capturing",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 174,
+                  "endPos": 183,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "PoS",
+                  "minorType": "Article",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "DT",
+                      "kind": "word",
+                      "length": 3,
+                      "text": "the",
+                      "orth": "lowercase",
+                      "annotype": "Token",
+                      "startPos": 184,
+                      "endPos": 187,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 184,
+                  "endPos": 187,
+                  "features": {
+                    "id": "2"
+                  }
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NNS",
+                  "kind": "word",
+                  "length": 4,
+                  "text": "data",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 188,
+                  "endPos": 192,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "PoS",
+                  "minorType": "Conjunction",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "CC",
+                      "kind": "word",
+                      "length": 3,
+                      "text": "and",
+                      "orth": "lowercase",
+                      "annotype": "Token",
+                      "startPos": 193,
+                      "endPos": 196,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 193,
+                  "endPos": 196,
+                  "features": {
+                    "id": "1"
+                  }
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "Verb",
+                  "minorType": "Modal",
+                  "internal": [
+                    {
+                      
+                          "type": "SemanticToken",
+                          "category": "MD",
+                          "kind": "word",
+                          "length": 4,
+                          "text": "will",
+                          "orth": "lowercase",
+                          "annotype": "Token",
+                          "startPos": 197,
+                          "endPos": 201,
+                          "features": {}
+                       
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 197,
+                  "endPos": 201,
+                  "features": {
+                    "id": "1",
+                    "tence": "FutureSimple"
+                  }
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "VB",
+                  "kind": "word",
+                  "length": 6,
+                  "text": "expect",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 202,
+                  "endPos": 208,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "PRP",
+                  "kind": "word",
+                  "length": 3,
+                  "text": "you",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 209,
+                  "endPos": 212,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "country_code",
+                  "minorType": "",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "TO",
+                      "kind": "word",
+                      "length": 2,
+                      "text": "to",
+                      "orth": "lowercase",
+                      "annotype": "Token",
+                      "startPos": 213,
+                      "endPos": 215,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 213,
+                  "endPos": 215,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "RB",
+                  "kind": "word",
+                  "length": 3,
+                  "text": "not",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 216,
+                  "endPos": 219,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "RB",
+                  "kind": "word",
+                  "length": 4,
+                  "text": "only",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 220,
+                  "endPos": 224,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "VB",
+                  "kind": "word",
+                  "length": 4,
+                  "text": "edit",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 225,
+                  "endPos": 229,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "PoS",
+                  "minorType": "Conjunction",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "CC",
+                      "kind": "word",
+                      "length": 3,
+                      "text": "but",
+                      "orth": "lowercase",
+                      "annotype": "Token",
+                      "startPos": 230,
+                      "endPos": 233,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 230,
+                  "endPos": 233,
+                  "features": {
+                    "id": "2"
+                  }
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "VB",
+                  "kind": "word",
+                  "length": 5,
+                  "text": "color",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 234,
+                  "endPos": 239,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "JJ",
+                  "kind": "word",
+                  "length": 7,
+                  "text": "correct",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 240,
+                  "endPos": 247,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "country_code",
+                  "minorType": "",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "IN",
+                      "kind": "word",
+                      "length": 2,
+                      "text": "as",
+                      "orth": "lowercase",
+                      "annotype": "Token",
+                      "startPos": 248,
+                      "endPos": 250,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 248,
+                  "endPos": 250,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "RB",
+                  "kind": "word",
+                  "length": 4,
+                  "text": "well",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 251,
+                  "endPos": 255,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": ".",
+                  "kind": "punctuation",
+                  "length": 1,
+                  "text": ".",
+                  "annotype": "Token",
+                  "startPos": 255,
+                  "endPos": 256,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NNP",
+                  "kind": "word",
+                  "length": 4,
+                  "text": "Mild",
+                  "orth": "upperInitial",
+                  "annotype": "Token",
+                  "startPos": 257,
+                  "endPos": 261,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NNS",
+                  "kind": "word",
+                  "length": 7,
+                  "text": "effects",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 262,
+                  "endPos": 269,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "VBN",
+                  "kind": "word",
+                  "length": 6,
+                  "text": "needed",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 270,
+                  "endPos": 276,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "PoS",
+                  "minorType": "Adverb",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "RB",
+                      "kind": "word",
+                      "length": 4,
+                      "text": "also",
+                      "orth": "lowercase",
+                      "annotype": "Token",
+                      "startPos": 277,
+                      "endPos": 281,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 277,
+                  "endPos": 281,
+                  "features": {
+                    "id": "1"
+                  }
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "JJ",
+                  "kind": "word",
+                  "length": 4,
+                  "text": "mild",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 282,
+                  "endPos": 286,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NN",
+                  "kind": "word",
+                  "length": 4,
+                  "text": "text",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 287,
+                  "endPos": 291,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": ".",
+                  "kind": "punctuation",
+                  "length": 1,
+                  "text": ".",
+                  "annotype": "Token",
+                  "startPos": 291,
+                  "endPos": 292,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NN",
+                  "kind": "punctuation",
+                  "length": 1,
+                  "text": "\\",
+                  "annotype": "Token",
+                  "startPos": 292,
+                  "endPos": 293,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NN",
+                  "kind": "word",
+                  "length": 1,
+                  "text": "n",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 293,
+                  "endPos": 294,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NN",
+                  "kind": "punctuation",
+                  "length": 1,
+                  "text": "\\",
+                  "annotype": "Token",
+                  "startPos": 294,
+                  "endPos": 295,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NNS",
+                  "kind": "word",
+                  "length": 5,
+                  "text": "nThis",
+                  "orth": "mixedCaps",
+                  "annotype": "Token",
+                  "startPos": 295,
+                  "endPos": 300,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NN",
+                  "kind": "word",
+                  "length": 3,
+                  "text": "job",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 301,
+                  "endPos": 304,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "VBD",
+                  "kind": "word",
+                  "length": 3,
+                  "text": "was",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 305,
+                  "endPos": 308,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "VBN",
+                  "kind": "word",
+                  "length": 6,
+                  "text": "posted",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 309,
+                  "endPos": 315,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "IN",
+                  "kind": "word",
+                  "length": 4,
+                  "text": "from",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 316,
+                  "endPos": 320,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "PoS",
+                  "minorType": "Article",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "DT",
+                      "kind": "word",
+                      "length": 1,
+                      "text": "a",
+                      "orth": "lowercase",
+                      "annotype": "Token",
+                      "startPos": 321,
+                      "endPos": 322,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 321,
+                  "endPos": 322,
+                  "features": {
+                    "id": "1"
+                  }
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "JJ",
+                  "kind": "word",
+                  "length": 6,
+                  "text": "mobile",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 323,
+                  "endPos": 329,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NN",
+                  "kind": "word",
+                  "length": 6,
+                  "text": "device",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 330,
+                  "endPos": 336,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": ",",
+                  "kind": "punctuation",
+                  "length": 1,
+                  "text": ",",
+                  "annotype": "Token",
+                  "startPos": 336,
+                  "endPos": 337,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "country_code",
+                  "minorType": "",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "RB",
+                      "kind": "word",
+                      "length": 2,
+                      "text": "so",
+                      "orth": "lowercase",
+                      "annotype": "Token",
+                      "startPos": 338,
+                      "endPos": 340,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 338,
+                  "endPos": 340,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "VB",
+                  "kind": "word",
+                  "length": 6,
+                  "text": "please",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 341,
+                  "endPos": 347,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NN",
+                  "kind": "word",
+                  "length": 6,
+                  "text": "pardon",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 348,
+                  "endPos": 354,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "DT",
+                  "kind": "word",
+                  "length": 3,
+                  "text": "any",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 355,
+                  "endPos": 358,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NNS",
+                  "kind": "word",
+                  "length": 5,
+                  "text": "typos",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 359,
+                  "endPos": 364,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "PoS",
+                  "minorType": "Conjunction",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "CC",
+                      "kind": "word",
+                      "length": 2,
+                      "text": "or",
+                      "orth": "lowercase",
+                      "annotype": "Token",
+                      "startPos": 365,
+                      "endPos": 367,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 365,
+                  "endPos": 367,
+                  "features": {
+                    "id": "3"
+                  }
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "DT",
+                  "kind": "word",
+                  "length": 3,
+                  "text": "any",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 368,
+                  "endPos": 371,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "VBG",
+                  "kind": "word",
+                  "length": 7,
+                  "text": "missing",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 372,
+                  "endPos": 379,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NNS",
+                  "kind": "word",
+                  "length": 7,
+                  "text": "details",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 380,
+                  "endPos": 387,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": ".",
+                  "kind": "punctuation",
+                  "length": 1,
+                  "text": ".",
+                  "annotype": "Token",
+                  "startPos": 387,
+                  "endPos": 388,
+                  "features": {}
+                }
+              ],
+              "annotype": "",
+              "startPos": 90,
+              "endPos": 9223372036854775807,
+              "features": {}
+            },
+            {
+              "tokensCount": 20,
+              "tokens": [
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "stop",
+                  "minorType": "",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "PRP",
+                      "kind": "word",
+                      "length": 2,
+                      "text": "We",
+                      "orth": "upperInitial",
+                      "annotype": "Token",
+                      "startPos": 0,
+                      "endPos": 2,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 0,
+                  "endPos": 2,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "VBP",
+                  "kind": "word",
+                  "length": 3,
+                  "text": "are",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 3,
+                  "endPos": 6,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "IN",
+                  "kind": "word",
+                  "length": 5,
+                  "text": "under",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 7,
+                  "endPos": 12,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NN",
+                  "kind": "word",
+                  "length": 8,
+                  "text": "contract",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 13,
+                  "endPos": 21,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "country_code",
+                  "minorType": "",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "IN",
+                      "kind": "word",
+                      "length": 2,
+                      "text": "by",
+                      "orth": "lowercase",
+                      "annotype": "Token",
+                      "startPos": 22,
+                      "endPos": 24,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 22,
+                  "endPos": 24,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "PoS",
+                  "minorType": "Article",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "DT",
+                      "kind": "word",
+                      "length": 1,
+                      "text": "a",
+                      "orth": "lowercase",
+                      "annotype": "Token",
+                      "startPos": 25,
+                      "endPos": 26,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 25,
+                  "endPos": 26,
+                  "features": {
+                    "id": "1"
+                  }
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "JJ",
+                  "kind": "word",
+                  "length": 5,
+                  "text": "local",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 27,
+                  "endPos": 32,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NN",
+                  "kind": "word",
+                  "length": 4,
+                  "text": "boat",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 33,
+                  "endPos": 37,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NN",
+                  "kind": "word",
+                  "length": 6,
+                  "text": "broker",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 38,
+                  "endPos": 44,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "country_code",
+                  "minorType": "",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "TO",
+                      "kind": "word",
+                      "length": 2,
+                      "text": "to",
+                      "orth": "lowercase",
+                      "annotype": "Token",
+                      "startPos": 45,
+                      "endPos": 47,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 45,
+                  "endPos": 47,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NN",
+                  "kind": "word",
+                  "length": 4,
+                  "text": "film",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 48,
+                  "endPos": 52,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "CD",
+                  "kind": "number",
+                  "length": 1,
+                  "text": "4",
+                  "annotype": "Token",
+                  "startPos": 53,
+                  "endPos": 54,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NNP",
+                  "kind": "word",
+                  "length": 1,
+                  "text": "K",
+                  "orth": "upperInitial",
+                  "annotype": "Token",
+                  "startPos": 54,
+                  "endPos": 55,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NNS",
+                  "kind": "word",
+                  "length": 7,
+                  "text": "aerials",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 56,
+                  "endPos": 63,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "PoS",
+                  "minorType": "Conjunction",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "CC",
+                      "kind": "word",
+                      "length": 3,
+                      "text": "and",
+                      "orth": "lowercase",
+                      "annotype": "Token",
+                      "startPos": 64,
+                      "endPos": 67,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 64,
+                  "endPos": 67,
+                  "features": {
+                    "id": "1"
+                  }
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NN",
+                  "kind": "word",
+                  "length": 8,
+                  "text": "interior",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 68,
+                  "endPos": 76,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "PoS",
+                  "minorType": "Preposition",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "IN",
+                      "kind": "word",
+                      "length": 2,
+                      "text": "of",
+                      "orth": "lowercase",
+                      "annotype": "Token",
+                      "startPos": 77,
+                      "endPos": 79,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 77,
+                  "endPos": 79,
+                  "features": {
+                    "id": "2"
+                  }
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "DT",
+                  "kind": "word",
+                  "length": 4,
+                  "text": "each",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 80,
+                  "endPos": 84,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NN",
+                  "kind": "word",
+                  "length": 4,
+                  "text": "boat",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 85,
+                  "endPos": 89,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": ".",
+                  "kind": "punctuation",
+                  "length": 1,
+                  "text": ".",
+                  "annotype": "Token",
+                  "startPos": 89,
+                  "endPos": 90,
+                  "features": {}
+                }
+              ],
+              "annotype": "Sentence",
+              "startPos": 0,
+              "endPos": 90,
+              "features": {}
+            },
+            {
+              "tokensCount": 14,
+              "tokens": [],
+              "annotype": "Sentence",
+              "startPos": 92,
+              "endPos": 161,
+              "features": {}
+            },
+            {
+              "tokensCount": 20,
+              "tokens": [],
+              "annotype": "Sentence",
+              "startPos": 163,
+              "endPos": 256,
+              "features": {}
+            },
+            {
+              "tokensCount": 7,
+              "tokens": [],
+              "annotype": "Sentence",
+              "startPos": 257,
+              "endPos": 292,
+              "features": {}
+            },
+            {
+              "tokensCount": 22,
+              "tokens": [],
+              "annotype": "Sentence",
+              "startPos": 292,
+              "endPos": 388,
+              "features": {}
+            }
+          ],
+          "annotype": "Tree",
+          "startPos": 0,
+          "endPos": 9223372036854775807,
+          "features": {}
+        },
+        "title_semantic": {
+          "sentences": [
+            {
+              "tokensCount": 6,
+              "tokens": [
+                {
+                  "type": "SemanticToken",
+                  "category": "NNP",
+                  "kind": "word",
+                  "length": 5,
+                  "text": "Video",
+                  "orth": "upperInitial",
+                  "annotype": "Token",
+                  "startPos": 0,
+                  "endPos": 5,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "jobtitle",
+                  "minorType": "",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "NN",
+                      "kind": "word",
+                      "length": 6,
+                      "text": "editor",
+                      "orth": "lowercase",
+                      "annotype": "Token",
+                      "startPos": 6,
+                      "endPos": 12,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 6,
+                  "endPos": 12,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticAnnotation",
+                  "majorType": "PoS",
+                  "minorType": "Preposition",
+                  "internal": [
+                    {
+                      "type": "SemanticToken",
+                      "category": "IN",
+                      "kind": "word",
+                      "length": 3,
+                      "text": "for",
+                      "orth": "lowercase",
+                      "annotype": "Token",
+                      "startPos": 13,
+                      "endPos": 16,
+                      "features": {}
+                    }
+                  ],
+                  "annotype": "Lookup",
+                  "startPos": 13,
+                  "endPos": 16,
+                  "features": {
+                    "id": "4"
+                  }
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NN",
+                  "kind": "word",
+                  "length": 4,
+                  "text": "boat",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 17,
+                  "endPos": 21,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": "NNS",
+                  "kind": "word",
+                  "length": 5,
+                  "text": "sales",
+                  "orth": "lowercase",
+                  "annotype": "Token",
+                  "startPos": 22,
+                  "endPos": 27,
+                  "features": {}
+                },
+                {
+                  "type": "SemanticToken",
+                  "category": ".",
+                  "kind": "punctuation",
+                  "length": 1,
+                  "text": ".",
+                  "annotype": "Token",
+                  "startPos": 27,
+                  "endPos": 28,
+                  "features": {}
+                }
+              ],
+              "annotype": "Sentence",
+              "startPos": 0,
+              "endPos": 28,
+              "features": {}
+            }
+          ],
+          "annotype": "Tree",
+          "startPos": 0,
+          "endPos": 9223372036854775807,
+          "features": {}
+        }
+      }
+    }
+  ]
+}

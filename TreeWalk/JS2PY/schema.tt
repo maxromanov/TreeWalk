@@ -1,0 +1,65 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+   Uri schemaURI = new Uri(input.FileName);
+   String schemaFile = schemaURI.Segments.Last().Split('.').First();
+   if(schemaFile.EndsWith("-schema")) schemaFile = schemaFile.Substring(0,schemaFile.Length-7);
+   string [] parts = schemaFile.Split('-');
+   FileName = "";
+   foreach(string part in parts) 
+     FileName += part.Substring(0,1).ToUpper() + part.Substring(1);
+#>
+# Root schema object generated class
+# <#=input.Property("description")#>
+#[START imports]
+from jsonmodelschema import JObject
+from jsonmodelschema import JArray
+from jsonmodelschema import JNumber
+from jsonmodelschema import JString
+from jsonmodelschema import JMixed
+<#
+   foreach(InputTreeNode ModelProperty in input.GetChildren("properties")) {
+    if(ModelProperty.HasProperty("$ref") && ModelProperty.Property("$ref").StartsWith("#/definitions/")) {
+	  string RefName = ModelProperty.Property("$ref").Substring(14);	 
+#>
+from <#=RefName#> import <#=RefName#>
+<# 
+   } else if(ModelProperty.HasPropertyValue("type","array") ) {
+			InputTreeNode items = ModelProperty.PropertyObject("items");
+			  if(items.HasProperty("$ref") && items.Property("$ref").StartsWith("#/definitions/")) {
+			    string RefName = items.Property("$ref").Substring(14); 
+#>
+from <#=RefName#> import <#=RefName#>
+<# 
+		}
+	}
+  } // 21
+#>
+#[END Imports]
+
+class <#=FileName#>(JObject):
+	"""<#=input.Property("title")#>"""
+	def __init__(self,**kwargs):
+		super(<#=FileName#>, self).__init__(**kwargs)
+<#
+		   foreach(InputTreeNode ModelProperty in input.GetChildren("properties")) {
+			if(ModelProperty.HasPropertyValue("type","string")) {
+#>
+		self.<#=ModelProperty.Name#> = JString()
+<#
+			} else if(ModelProperty.HasPropertyValue("type","array")) {
+#>
+		self.<#=ModelProperty.Name#> = JArray()
+<#
+			} else if(ModelProperty.HasProperty("$ref") && ModelProperty.Property("$ref").StartsWith("#/definitions/")) {
+					 string RefName = ModelProperty.Property("$ref").Substring(14);
+#>
+		self.<#=ModelProperty.Name#> = <#=RefName#>()
+<#
+			}
+}
+#>

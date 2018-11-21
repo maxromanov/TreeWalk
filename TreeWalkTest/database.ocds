@@ -1,0 +1,9 @@
+﻿{
+  "$schema": "http://standard.open-contracting.org/latest/en/release-package-schema.json",
+  "version": "1.1",
+  "extensions": [
+    "https://raw.githubusercontent.com/open-contracting/ocds_location_extension/v1.1.1/extension.json",
+    "http://digitaltwins.info/schema/semantic/extension.json"
+  ],
+  "releases": []
+}

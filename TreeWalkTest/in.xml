@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Test xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="test.xsd">
+  <old id="OLD1"/>
+  <new id="NEW2"/>
+  <upd id="UPD3" name="upd_test"></upd>
+</Test> 

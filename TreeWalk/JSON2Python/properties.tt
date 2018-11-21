@@ -1,0 +1,46 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+			if(input.GetName().Equals("properties")) {
+					input.TakeAsArray();
+#>
+# Properties defined in the schema file 
+# [START properties]
+<#
+				foreach(InputTreeNode model in input.childs) {
+#>
+import <#=model.Name#>
+<#
+				}
+#>
+# [END properties]
+<#
+					return this.GenerationEnvironment.ToString();  
+			}
+#>
+from google.appengine.ext import ndb
+
+<#
+			if(input.HasProperty("type")) 
+			{
+			  if(input.Property("type").Equals("string")) {
+#>
+# <#=input.Property("title")#>
+class <#=input.GetNameForClassName()#>Property(ndb.StringProperty):
+    def _validate(self, value):
+        if not isinstance(value, (string)):
+            raise TypeError('expected an string, got %s' % repr(value))
+
+    def _to_base_type(self, value):
+        return str(value)  # Doesn't matter if it's any
+
+    def _from_base_type(self, value):
+        return str(value)  # Always return a string
+
+<#
+        } //if(input.Property("type").Equals("string"))
+      } // if(input.HasProperty("type")) 
+#>
