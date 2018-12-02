@@ -27,9 +27,11 @@
   </PropertyGroup>
   <ItemGroup />
   <ItemGroup>
+    <Compile Include="Merge-Xml2Xml.ps1" />
     <Compile Include="TreeWalkTools.psd1" />
     <Compile Include="TreeWalkTools.psm1" />
     <Compile Include="TreeWalkTools.tests.ps1" />
+    <Compile Include="work.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />

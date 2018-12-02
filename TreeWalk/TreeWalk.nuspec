@@ -13,5 +13,15 @@
     <releaseNotes>Initial version</releaseNotes>
     <copyright>GNU GPL v3</copyright>
     <tags>XML JSON Merge Diff</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="11.0.2" />
+      <dependency id="Newtonsoft.Json.Schema" version="3.0.10" />
+      <dependency id="System.Management.Automation.dll" version="10.0.10586.0" />
+      <dependency id="log4net" version="2.0.8" />
+    </dependencies>
   </metadata>
+  <files>
+    <file src="bin\Debug\*.dll" target="lib\net461" />  
+    <file src="TreeWalk.log4net.config" target="lib\net461" />
+  </files>
 </package>

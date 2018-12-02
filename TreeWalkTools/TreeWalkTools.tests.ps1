@@ -4,10 +4,13 @@
 # You can download Pester from https://go.microsoft.com/fwlink/?LinkID=534084
 #
 
-Describe "Get-Function" {
-	Context "Function Exists" {
+Describe "Test Module Load" {
+
+	Context "Package Exists" {
+		Import-Module -Name "$PSScriptRoot\TreeWalkTools.psm1"
+		$Module = Get-Module TreeWalkTools
 		It "Should Return" {
-		
+		    $Module | Should -Not -BeNullOrEmpty
 		}
 	}
 }
