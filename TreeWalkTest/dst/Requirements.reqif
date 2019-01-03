@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<REQ-IF xmlns="http://www.omg.org/spec/ReqIF/20110401/reqif.xsd" xmlns:configuration="http://eclipse.org/rmf/pror/toolextensions/1.0" xmlns:id="http://pror.org/presentation/id" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <THE-HEADER>
+    <REQ-IF-HEADER IDENTIFIER="_xohMYTJvEeixmbNi9JE5uQ">
+      <COMMENT>Created by: DEV</COMMENT>
+      <CREATION-TIME>2018-03-28T13:07:08.478+03:00</CREATION-TIME>
+      <REQ-IF-TOOL-ID>ReqIF Studio (https://reqif.academy)</REQ-IF-TOOL-ID>
+      <REQ-IF-VERSION>1.0</REQ-IF-VERSION>
+      <SOURCE-TOOL-ID>ReqIF Studio (https://reqif.academy)</SOURCE-TOOL-ID>
+      <TITLE>ISeePricey</TITLE>
+    </REQ-IF-HEADER>
+  </THE-HEADER>
+  <CORE-CONTENT>
+    <REQ-IF-CONTENT>
+      <DATATYPES>
+        <DATATYPE-DEFINITION-STRING IDENTIFIER="_xohMYzJvEeixmbNi9JE5uQ" LAST-CHANGE="2018-03-28T13:07:08.478+03:00" LONG-NAME="T_String32k" MAX-LENGTH="32000"/>
+        <DATATYPE-DEFINITION-STRING IDENTIFIER="_xohMZDJvEeixmbNi9JE5uQ" LAST-CHANGE="2018-03-28T13:07:08.478+03:00" LONG-NAME="T_String32k_SO_ForeignId" MAX-LENGTH="32000"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_xohMZTJvEeixmbNi9JE5uQ" LAST-CHANGE="2018-03-28T13:07:08.478+03:00" LONG-NAME="T_Xhtml_SO_ChapterName"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_xohMZjJvEeixmbNi9JE5uQ" LAST-CHANGE="2018-03-28T13:07:08.478+03:00" LONG-NAME="T_Xhtml_SO_Text"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_xohMZzJvEeixmbNi9JE5uQ" LAST-CHANGE="2018-03-28T13:07:08.478+03:00" LONG-NAME="T_Xhtml_Spec_Description"/>
+        <DATATYPE-DEFINITION-XHTML IDENTIFIER="_xohMaDJvEeixmbNi9JE5uQ" LAST-CHANGE="2018-03-28T13:07:08.478+03:00" LONG-NAME="T_Xhtml_SR_Description"/>
+        <DATATYPE-DEFINITION-STRING IDENTIFIER="_xohMaTJvEeixmbNi9JE5uQ" LAST-CHANGE="2018-03-28T13:07:08.478+03:00" LONG-NAME="T_String32k_SR_ForeignId" MAX-LENGTH="32000"/>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_FyDpYDQkEeiLFedYwzTs8A" LAST-CHANGE="2018-03-30T17:10:21.154+03:00" LONG-NAME="Software requirement class">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_KHUZcDQkEeiLFedYwzTs8A" LAST-CHANGE="2018-03-30T17:10:49.830+03:00" LONG-NAME="Business requirements">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT="1"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_NctA4DQkEeiLFedYwzTs8A" LAST-CHANGE="2018-03-30T17:11:12.319+03:00" LONG-NAME="User requirements">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT="2"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_RGZrcDQkEeiLFedYwzTs8A" LAST-CHANGE="2018-03-30T17:11:37.377+03:00" LONG-NAME="Functional requirements">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT="3"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_TNnPkDQkEeiLFedYwzTs8A" LAST-CHANGE="2018-03-30T17:11:52.725+03:00" LONG-NAME="QOS requirements">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="4" OTHER-CONTENT="4"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_A0gJYEO-EeirhJCiqnW3-A" LAST-CHANGE="2018-04-19T13:39:55.095+03:00" LONG-NAME="DeploymentRequirements">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="14" OTHER-CONTENT="14"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION IDENTIFIER="_DwvBEDUEEeiyaseCc0NzVw" LAST-CHANGE="2018-03-31T19:53:33.559+03:00" LONG-NAME="BusinessRequirementKind">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_Hg5gADUEEeiyaseCc0NzVw" LAST-CHANGE="2018-03-31T19:53:59.178+03:00" LONG-NAME="ClientContext">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT="1"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_Jf1R4DUEEeiyaseCc0NzVw" LAST-CHANGE="2018-03-31T19:54:14.683+03:00" LONG-NAME="ProductRequest">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT="2"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_OvCU4DW4EeiyaseCc0NzVw" LAST-CHANGE="2018-04-01T17:23:19.276+03:00" LONG-NAME="ProductObject">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="5" OTHER-CONTENT="5"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION DESC="" IDENTIFIER="_zwQmADXSEeiyaseCc0NzVw" LAST-CHANGE="2018-04-01T20:33:33.305+03:00" LONG-NAME="RequirementKind">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE IDENTIFIER="_PpKmkDXTEeiyaseCc0NzVw" LAST-CHANGE="2018-04-01T20:36:36.513+03:00" LONG-NAME="Context">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="1" OTHER-CONTENT="1"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_Tiu5IDXTEeiyaseCc0NzVw" LAST-CHANGE="2018-04-01T20:37:06.848+03:00" LONG-NAME="Functional">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="2" OTHER-CONTENT="2"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_Vn7rEDXTEeiyaseCc0NzVw" LAST-CHANGE="2018-04-01T20:37:22.082+03:00" LONG-NAME="NonFunctional">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="3" OTHER-CONTENT="3"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_fd5DkDXTEeiyaseCc0NzVw" LAST-CHANGE="2018-04-01T20:38:27.313+03:00" LONG-NAME="Context.Client">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="6" OTHER-CONTENT="6"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_jWZmMDXTEeiyaseCc0NzVw" LAST-CHANGE="2018-04-01T20:38:53.522+03:00" LONG-NAME="Context.Object">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="7" OTHER-CONTENT="7"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_llTGsDXTEeiyaseCc0NzVw" LAST-CHANGE="2018-04-01T20:39:09.242+03:00" LONG-NAME="Context.Product">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="8" OTHER-CONTENT="8"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_oTIl8DXTEeiyaseCc0NzVw" LAST-CHANGE="2018-04-01T20:39:27.602+03:00" LONG-NAME="Functional.Feature">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="9" OTHER-CONTENT="9"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_rsr7sDXTEeiyaseCc0NzVw" LAST-CHANGE="2018-04-01T20:39:49.937+03:00" LONG-NAME="Functional.UserStory">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="10" OTHER-CONTENT="10"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_uEWWoDXTEeiyaseCc0NzVw" LAST-CHANGE="2018-04-01T20:40:06.379+03:00" LONG-NAME="Functional.Bug">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="11" OTHER-CONTENT="11"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_GBz1UDXUEeiyaseCc0NzVw" LAST-CHANGE="2018-04-01T20:42:46.863+03:00" LONG-NAME="NonFunctional.Performance">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="12" OTHER-CONTENT="12"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_UQloMDXUEeiyaseCc0NzVw" LAST-CHANGE="2018-04-01T20:44:18.358+03:00" LONG-NAME="NonFunctional.Process">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="13" OTHER-CONTENT="13"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE IDENTIFIER="_-jGSAEO-EeirhJCiqnW3-A" LAST-CHANGE="2018-04-19T13:46:53.290+03:00" LONG-NAME="NonFunctional.Deployment">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="15" OTHER-CONTENT="15"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+        <DATATYPE-DEFINITION-ENUMERATION DESC="Requirement Processing Instruction" IDENTIFIER="_pURvgESdEeirhJCiqnW3-A" LAST-CHANGE="2018-04-20T16:20:46.495+03:00" LONG-NAME="ReqProcInstr">
+          <SPECIFIED-VALUES>
+            <ENUM-VALUE DESC="Apply Template instruction" IDENTIFIER="_6SfkIESdEeirhJCiqnW3-A" LAST-CHANGE="2018-04-20T16:21:39.900+03:00" LONG-NAME="ApplyTemplate">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="16" OTHER-CONTENT="16"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE DESC="Select variable using XPath" IDENTIFIER="_DTbZIESeEeirhJCiqnW3-A" LAST-CHANGE="2018-04-20T16:23:42.874+03:00" LONG-NAME="SelectVarXPath">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="17" OTHER-CONTENT="17"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE DESC="Set variable value" IDENTIFIER="_NmT-MESeEeirhJCiqnW3-A" LAST-CHANGE="2018-04-20T16:24:51.942+03:00" LONG-NAME="SetVar">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="18" OTHER-CONTENT="18"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+            <ENUM-VALUE DESC="Powershell instruction" IDENTIFIER="_SDLyIESeEeirhJCiqnW3-A" LAST-CHANGE="2018-04-20T16:25:22.531+03:00" LONG-NAME="PS1">
+              <PROPERTIES>
+                <EMBEDDED-VALUE KEY="19" OTHER-CONTENT="19"/>
+              </PROPERTIES>
+            </ENUM-VALUE>
+          </SPECIFIED-VALUES>
+        </DATATYPE-DEFINITION-ENUMERATION>
+      </DATATYPES>
+      <SPEC-TYPES>
+        <SPEC-OBJECT-TYPE IDENTIFIER="_xohMajJvEeixmbNi9JE5uQ" LAST-CHANGE="2018-03-28T13:07:08.478+03:00" LONG-NAME="Requirement">
+          <SPEC-ATTRIBUTES>
+            <ATTRIBUTE-DEFINITION-STRING IDENTIFIER="_xohMazJvEeixmbNi9JE5uQ" LAST-CHANGE="2018-03-28T13:07:08.478+03:00" LONG-NAME="ReqIF.ForeignID">
+              <TYPE>
+                <DATATYPE-DEFINITION-STRING-REF>_xohMZDJvEeixmbNi9JE5uQ</DATATYPE-DEFINITION-STRING-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-STRING>
+            <ATTRIBUTE-DEFINITION-XHTML IDENTIFIER="_xohMbDJvEeixmbNi9JE5uQ" LAST-CHANGE="2018-03-28T13:07:08.478+03:00" LONG-NAME="ReqIF.ChapterName">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_xohMZTJvEeixmbNi9JE5uQ</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML IDENTIFIER="_xohMbTJvEeixmbNi9JE5uQ" LAST-CHANGE="2018-03-28T13:07:08.478+03:00" LONG-NAME="ReqIF.Text">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_xohMZjJvEeixmbNi9JE5uQ</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-STRING IDENTIFIER="_oJ_tgDXSEeiyaseCc0NzVw" LAST-CHANGE="2018-04-01T20:32:14.752+03:00" LONG-NAME="ParamValue" IS-EDITABLE="true">
+              <TYPE>
+                <DATATYPE-DEFINITION-STRING-REF>_xohMYzJvEeixmbNi9JE5uQ</DATATYPE-DEFINITION-STRING-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-STRING>
+            <ATTRIBUTE-DEFINITION-ENUMERATION IDENTIFIER="_wJUUgDXSEeiyaseCc0NzVw" LAST-CHANGE="2018-04-01T20:33:04.871+03:00" LONG-NAME="Kind" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_zwQmADXSEeiyaseCc0NzVw</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-ENUMERATION IDENTIFIER="_db9BMESeEeirhJCiqnW3-A" LAST-CHANGE="2018-04-20T16:26:36.021+03:00" LONG-NAME="ProcessingInstruction" IS-EDITABLE="false" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_pURvgESdEeirhJCiqnW3-A</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+          </SPEC-ATTRIBUTES>
+        </SPEC-OBJECT-TYPE>
+        <SPECIFICATION-TYPE IDENTIFIER="_xoqWUDJvEeixmbNi9JE5uQ" LAST-CHANGE="2018-03-28T13:07:08.478+03:00" LONG-NAME="Specification Type">
+          <SPEC-ATTRIBUTES>
+            <ATTRIBUTE-DEFINITION-XHTML IDENTIFIER="_xoqWUTJvEeixmbNi9JE5uQ" LAST-CHANGE="2018-03-28T13:07:08.478+03:00" LONG-NAME="ReqIF.Description">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_xohMZzJvEeixmbNi9JE5uQ</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+          </SPEC-ATTRIBUTES>
+        </SPECIFICATION-TYPE>
+        <SPEC-RELATION-TYPE IDENTIFIER="_xoqWUjJvEeixmbNi9JE5uQ" LAST-CHANGE="2018-03-28T13:07:08.478+03:00" LONG-NAME="SpecRealtion Type">
+          <SPEC-ATTRIBUTES>
+            <ATTRIBUTE-DEFINITION-XHTML IDENTIFIER="_xoqWUzJvEeixmbNi9JE5uQ" LAST-CHANGE="2018-03-28T13:07:08.478+03:00" LONG-NAME="ReqIF.Description">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_xohMaDJvEeixmbNi9JE5uQ</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-STRING IDENTIFIER="_xoqWVDJvEeixmbNi9JE5uQ" LAST-CHANGE="2018-03-28T13:07:08.478+03:00" LONG-NAME="ReqIF.ForeignID">
+              <TYPE>
+                <DATATYPE-DEFINITION-STRING-REF>_xohMaTJvEeixmbNi9JE5uQ</DATATYPE-DEFINITION-STRING-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-STRING>
+          </SPEC-ATTRIBUTES>
+        </SPEC-RELATION-TYPE>
+        <SPEC-OBJECT-TYPE IDENTIFIER="_B93SEDKPEeigMNoA9KyHnA" LAST-CHANGE="2018-03-28T16:50:48.929+03:00" LONG-NAME="ParameterRequirement">
+          <SPEC-ATTRIBUTES>
+            <ATTRIBUTE-DEFINITION-STRING IDENTIFIER="_NVt7IDKPEeigMNoA9KyHnA" LAST-CHANGE="2018-03-28T16:51:53.492+03:00" LONG-NAME="ReqIF.ForeignID">
+              <TYPE>
+                <DATATYPE-DEFINITION-STRING-REF>_xohMZDJvEeixmbNi9JE5uQ</DATATYPE-DEFINITION-STRING-REF>
+              </TYPE>
+              <DEFAULT-VALUE>
+                <ATTRIBUTE-VALUE-STRING THE-VALUE="GCP">
+                  <DEFINITION>
+                    <ATTRIBUTE-DEFINITION-STRING-REF>_NVt7IDKPEeigMNoA9KyHnA</ATTRIBUTE-DEFINITION-STRING-REF>
+                  </DEFINITION>
+                </ATTRIBUTE-VALUE-STRING>
+              </DEFAULT-VALUE>
+            </ATTRIBUTE-DEFINITION-STRING>
+            <ATTRIBUTE-DEFINITION-XHTML IDENTIFIER="_kVfpkDKPEeigMNoA9KyHnA" LAST-CHANGE="2018-03-28T16:54:24.438+03:00" LONG-NAME="ReqIF.ChapterName">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_xohMZTJvEeixmbNi9JE5uQ</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-XHTML IDENTIFIER="_c1O9IDKPEeigMNoA9KyHnA" LAST-CHANGE="2018-03-28T16:53:50.149+03:00" LONG-NAME="ReqIF.Text">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_xohMZjJvEeixmbNi9JE5uQ</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-STRING IDENTIFIER="_qHrqoDKPEeigMNoA9KyHnA" LAST-CHANGE="2018-03-28T16:55:14.032+03:00" LONG-NAME="ParamValue">
+              <TYPE>
+                <DATATYPE-DEFINITION-STRING-REF>_xohMYzJvEeixmbNi9JE5uQ</DATATYPE-DEFINITION-STRING-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-STRING>
+          </SPEC-ATTRIBUTES>
+        </SPEC-OBJECT-TYPE>
+        <SPECIFICATION-TYPE DESC="" IDENTIFIER="_xC2PYDQjEeiLFedYwzTs8A" LAST-CHANGE="2018-03-30T17:08:01.575+03:00" LONG-NAME="Software requirements">
+          <SPEC-ATTRIBUTES>
+            <ATTRIBUTE-DEFINITION-XHTML IDENTIFIER="_1-rQMDQjEeiLFedYwzTs8A" LAST-CHANGE="2018-03-30T17:08:28.690+03:00" LONG-NAME="ReqIF.Description">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_xohMZzJvEeixmbNi9JE5uQ</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+            <ATTRIBUTE-DEFINITION-ENUMERATION IDENTIFIER="_BHfXsDQkEeiLFedYwzTs8A" LAST-CHANGE="2018-03-30T17:09:47.576+03:00" LONG-NAME="Class" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_FyDpYDQkEeiLFedYwzTs8A</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+          </SPEC-ATTRIBUTES>
+        </SPECIFICATION-TYPE>
+        <SPEC-OBJECT-TYPE IDENTIFIER="_xZ0UIDUDEeiyaseCc0NzVw" LAST-CHANGE="2018-03-31T19:51:27.890+03:00" LONG-NAME="BusinessRequirement">
+          <SPEC-ATTRIBUTES>
+            <ATTRIBUTE-DEFINITION-STRING IDENTIFIER="_5LReQDUDEeiyaseCc0NzVw" LAST-CHANGE="2018-03-31T19:52:09.797+03:00" LONG-NAME="ReqIF.ForeignID">
+              <TYPE>
+                <DATATYPE-DEFINITION-STRING-REF>_xohMZDJvEeixmbNi9JE5uQ</DATATYPE-DEFINITION-STRING-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-STRING>
+            <ATTRIBUTE-DEFINITION-ENUMERATION IDENTIFIER="_Ywc8QDUEEeiyaseCc0NzVw" LAST-CHANGE="2018-03-31T19:55:52.696+03:00" LONG-NAME="Kind" IS-EDITABLE="true" MULTI-VALUED="false">
+              <TYPE>
+                <DATATYPE-DEFINITION-ENUMERATION-REF>_DwvBEDUEEeiyaseCc0NzVw</DATATYPE-DEFINITION-ENUMERATION-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-ENUMERATION>
+            <ATTRIBUTE-DEFINITION-STRING IDENTIFIER="_A40RYDUHEeiyaseCc0NzVw" LAST-CHANGE="2018-03-31T20:12:47.374+03:00" LONG-NAME="ParamValue">
+              <TYPE>
+                <DATATYPE-DEFINITION-STRING-REF>_xohMYzJvEeixmbNi9JE5uQ</DATATYPE-DEFINITION-STRING-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-STRING>
+            <ATTRIBUTE-DEFINITION-XHTML IDENTIFIER="_EVbiMDUHEeiyaseCc0NzVw" LAST-CHANGE="2018-03-31T20:15:06.475+03:00" LONG-NAME="ReqIF.ChapterName">
+              <TYPE>
+                <DATATYPE-DEFINITION-XHTML-REF>_xohMZTJvEeixmbNi9JE5uQ</DATATYPE-DEFINITION-XHTML-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-XHTML>
+          </SPEC-ATTRIBUTES>
+        </SPEC-OBJECT-TYPE>
+        <SPECIFICATION-TYPE IDENTIFIER="_Yy9vkE4wEei8KIn9nH044A" LAST-CHANGE="2018-05-02T20:43:48.580+03:00" LONG-NAME="BusinessRequirements"/>
+      </SPEC-TYPES>
+      <SPEC-OBJECTS>
+        <SPEC-OBJECT IDENTIFIER="_MaO1MDKNEeigMNoA9KyHnA" LAST-CHANGE="2018-04-01T17:17:41.290+03:00" LONG-NAME="ContentRequirements">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="REQ-8">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_xohMazJvEeixmbNi9JE5uQ</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_xohMbTJvEeixmbNi9JE5uQ</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p style="">Content requirements</xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_xohMbDJvEeixmbNi9JE5uQ</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p style="font-size: 70%">Content Requirements</xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_xohMajJvEeixmbNi9JE5uQ</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_Y2L_kDKNEeigMNoA9KyHnA" LAST-CHANGE="2018-03-28T16:40:05.976+03:00" LONG-NAME="NavigationRequirements">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="REQ-9">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_xohMazJvEeixmbNi9JE5uQ</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_xohMbDJvEeixmbNi9JE5uQ</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p style=" font-size: 70%">Navigation requirements</xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_xohMajJvEeixmbNi9JE5uQ</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_VPkowDKOEeigMNoA9KyHnA" LAST-CHANGE="2018-03-28T16:45:45.277+03:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="REQ-10">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_xohMazJvEeixmbNi9JE5uQ</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_xohMbDJvEeixmbNi9JE5uQ</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p style="">Deployment platform</xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_xohMbTJvEeixmbNi9JE5uQ</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p style="">GCP</xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_xohMajJvEeixmbNi9JE5uQ</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_3izL8DKPEeigMNoA9KyHnA" LAST-CHANGE="2018-03-28T16:57:06.759+03:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="REQ-13">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_NVt7IDKPEeigMNoA9KyHnA</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_c1O9IDKPEeigMNoA9KyHnA</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p style="">Deployment Platform</xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="GCP">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_qHrqoDKPEeigMNoA9KyHnA</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_B93SEDKPEeigMNoA9KyHnA</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_1qEIgDTbEeiErpklDaKPsA" LAST-CHANGE="2018-04-02T08:57:26.497+03:00" LONG-NAME="Carousel">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="REQ-27">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_xohMazJvEeixmbNi9JE5uQ</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-ENUMERATION>
+              <VALUES>
+                <ENUM-VALUE-REF>_oTIl8DXTEeiyaseCc0NzVw</ENUM-VALUE-REF>
+              </VALUES>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-ENUMERATION-REF>_wJUUgDXSEeiyaseCc0NzVw</ATTRIBUTE-DEFINITION-ENUMERATION-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-ENUMERATION>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_xohMbDJvEeixmbNi9JE5uQ</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p style=" font-size: 70%">Carousel </xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="/archimate:model/folder[@name='Application']/folder/element[@name='Carousel']">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_oJ_tgDXSEeiyaseCc0NzVw</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_xohMajJvEeixmbNi9JE5uQ</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_-vDXEDTbEeiErpklDaKPsA" LAST-CHANGE="2018-03-31T15:06:39.871+03:00" LONG-NAME="CarouselPicture">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="REQ-19">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_NVt7IDKPEeigMNoA9KyHnA</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_c1O9IDKPEeigMNoA9KyHnA</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p style="">Carousel picture</xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="1.bmp">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_qHrqoDKPEeigMNoA9KyHnA</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_B93SEDKPEeigMNoA9KyHnA</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_JvjQEDTcEeiErpklDaKPsA" LAST-CHANGE="2018-03-31T15:07:55.592+03:00" LONG-NAME="CarouselPicture">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="REQ-22">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_NVt7IDKPEeigMNoA9KyHnA</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_c1O9IDKPEeigMNoA9KyHnA</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p style="">Carousel picture</xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="2.bmp">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_qHrqoDKPEeigMNoA9KyHnA</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_B93SEDKPEeigMNoA9KyHnA</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_QvyKEDUHEeiyaseCc0NzVw" LAST-CHANGE="2018-03-31T20:19:38.119+03:00" LONG-NAME="ClientContext">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="REQ-23">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_5LReQDUDEeiyaseCc0NzVw</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-ENUMERATION>
+              <VALUES>
+                <ENUM-VALUE-REF>_Hg5gADUEEeiyaseCc0NzVw</ENUM-VALUE-REF>
+              </VALUES>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-ENUMERATION-REF>_Ywc8QDUEEeiyaseCc0NzVw</ATTRIBUTE-DEFINITION-ENUMERATION-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-ENUMERATION>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="C:\Users\DEV\OneDrive\work\WorkSpy\work\sales\plans\rfp\finalized\ISeePricey.archimate">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_A40RYDUHEeiyaseCc0NzVw</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_EVbiMDUHEeiyaseCc0NzVw</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p style=" font-size: 70%">Client context</xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_xZ0UIDUDEeiyaseCc0NzVw</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_7JN00DUHEeiyaseCc0NzVw" LAST-CHANGE="2018-03-31T20:57:27.296+03:00" LONG-NAME="ProductRequest">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="REQ-24">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_5LReQDUDEeiyaseCc0NzVw</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-ENUMERATION>
+              <VALUES>
+                <ENUM-VALUE-REF>_Jf1R4DUEEeiyaseCc0NzVw</ENUM-VALUE-REF>
+              </VALUES>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-ENUMERATION-REF>_Ywc8QDUEEeiyaseCc0NzVw</ATTRIBUTE-DEFINITION-ENUMERATION-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-ENUMERATION>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="/archimate:model/folder[@name='Business']/element[@name='Single page website development']">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_A40RYDUHEeiyaseCc0NzVw</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_EVbiMDUHEeiyaseCc0NzVw</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p style=" font-size: 70%">Product request</xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_xZ0UIDUDEeiyaseCc0NzVw</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_VbzH0DW4EeiyaseCc0NzVw" LAST-CHANGE="2018-05-02T09:42:12.930+03:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="REQ-25">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_5LReQDUDEeiyaseCc0NzVw</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-ENUMERATION>
+              <VALUES>
+                <ENUM-VALUE-REF>_OvCU4DW4EeiyaseCc0NzVw</ENUM-VALUE-REF>
+              </VALUES>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-ENUMERATION-REF>_Ywc8QDUEEeiyaseCc0NzVw</ATTRIBUTE-DEFINITION-ENUMERATION-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-ENUMERATION>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="/archimate:model/folder[@name='Application']/element[@id='ccefaf22-b441-4616-8948-21b608c78218']">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_A40RYDUHEeiyaseCc0NzVw</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_xZ0UIDUDEeiyaseCc0NzVw</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_NS7Y8EO-EeirhJCiqnW3-A" LAST-CHANGE="2018-04-19T14:14:48.116+03:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="REQ-28">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_xohMazJvEeixmbNi9JE5uQ</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-ENUMERATION>
+              <VALUES>
+                <ENUM-VALUE-REF>_-jGSAEO-EeirhJCiqnW3-A</ENUM-VALUE-REF>
+              </VALUES>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-ENUMERATION-REF>_wJUUgDXSEeiyaseCc0NzVw</ATTRIBUTE-DEFINITION-ENUMERATION-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-ENUMERATION>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="/archimate:model/folder[@name='Application']/element[@xsi:type='archimate:ApplicationService']">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_oJ_tgDXSEeiyaseCc0NzVw</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-ENUMERATION>
+              <VALUES>
+                <ENUM-VALUE-REF>_6SfkIESdEeirhJCiqnW3-A</ENUM-VALUE-REF>
+              </VALUES>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-ENUMERATION-REF>_db9BMESeEeirhJCiqnW3-A</ATTRIBUTE-DEFINITION-ENUMERATION-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-ENUMERATION>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_xohMajJvEeixmbNi9JE5uQ</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+      </SPEC-OBJECTS>
+      <SPECIFICATIONS>
+        <SPECIFICATION DESC="BusinessRequirements" IDENTIFIER="_gIvMwDQlEeiLFedYwzTs8A" LAST-CHANGE="2018-03-30T17:21:03.031+03:00" LONG-NAME="BusinessRequirements">
+          <VALUES>
+            <ATTRIBUTE-VALUE-ENUMERATION>
+              <VALUES>
+                <ENUM-VALUE-REF>_KHUZcDQkEeiLFedYwzTs8A</ENUM-VALUE-REF>
+              </VALUES>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-ENUMERATION-REF>_BHfXsDQkEeiLFedYwzTs8A</ATTRIBUTE-DEFINITION-ENUMERATION-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-ENUMERATION>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_1-rQMDQjEeiLFedYwzTs8A</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p style="">BusinessRequirements</xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+          </VALUES>
+          <TYPE>
+            <SPECIFICATION-TYPE-REF>_xC2PYDQjEeiLFedYwzTs8A</SPECIFICATION-TYPE-REF>
+          </TYPE>
+          <CHILDREN>
+            <SPEC-HIERARCHY IDENTIFIER="_QwO2ATUHEeiyaseCc0NzVw" LAST-CHANGE="2018-03-31T20:16:28.783+03:00">
+              <OBJECT>
+                <SPEC-OBJECT-REF>_QvyKEDUHEeiyaseCc0NzVw</SPEC-OBJECT-REF>
+              </OBJECT>
+            </SPEC-HIERARCHY>
+            <SPEC-HIERARCHY IDENTIFIER="_7JoEgDUHEeiyaseCc0NzVw" LAST-CHANGE="2018-03-31T20:21:12.812+03:00">
+              <OBJECT>
+                <SPEC-OBJECT-REF>_7JN00DUHEeiyaseCc0NzVw</SPEC-OBJECT-REF>
+              </OBJECT>
+            </SPEC-HIERARCHY>
+            <SPEC-HIERARCHY IDENTIFIER="_VcPMsDW4EeiyaseCc0NzVw" LAST-CHANGE="2018-04-01T17:24:03.004+03:00">
+              <OBJECT>
+                <SPEC-OBJECT-REF>_VbzH0DW4EeiyaseCc0NzVw</SPEC-OBJECT-REF>
+              </OBJECT>
+            </SPEC-HIERARCHY>
+          </CHILDREN>
+        </SPECIFICATION>
+        <SPECIFICATION DESC="" IDENTIFIER="_W0iGUDKMEeigMNoA9KyHnA" LAST-CHANGE="2018-03-31T16:23:12.204+03:00" LONG-NAME="UserRequirements">
+          <VALUES>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_xoqWUTJvEeixmbNi9JE5uQ</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p style=""><xhtml:span style="margin: 0px; padding: 0px; border: 0px; font-variant-ligatures: normal; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; font-size: 16px; line-height: inherit; vertical-align: baseline; color: rgb(51, 51, 51); orphans: 2; widows: 2; background-color: rgb(255, 255, 255);">User Requirements</xhtml:span></xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+          </VALUES>
+          <TYPE>
+            <SPECIFICATION-TYPE-REF>_xoqWUDJvEeixmbNi9JE5uQ</SPECIFICATION-TYPE-REF>
+          </TYPE>
+          <CHILDREN>
+            <SPEC-HIERARCHY IDENTIFIER="_MaukcTKNEeigMNoA9KyHnA" LAST-CHANGE="2018-03-28T16:37:39.321+03:00">
+              <OBJECT>
+                <SPEC-OBJECT-REF>_MaO1MDKNEeigMNoA9KyHnA</SPEC-OBJECT-REF>
+              </OBJECT>
+            </SPEC-HIERARCHY>
+            <SPEC-HIERARCHY IDENTIFIER="_Y2orgTKNEeigMNoA9KyHnA" LAST-CHANGE="2018-03-28T16:39:02.170+03:00">
+              <OBJECT>
+                <SPEC-OBJECT-REF>_Y2L_kDKNEeigMNoA9KyHnA</SPEC-OBJECT-REF>
+              </OBJECT>
+            </SPEC-HIERARCHY>
+          </CHILDREN>
+        </SPECIFICATION>
+        <SPECIFICATION IDENTIFIER="_k7QwcDKMEeigMNoA9KyHnA" LAST-CHANGE="2018-03-31T16:26:20.731+03:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_xoqWUTJvEeixmbNi9JE5uQ</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p><xhtml:span style="margin: 0px; padding: 0px; border: 0px; font-variant-ligatures: normal; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; font-size: 16px; line-height: inherit; font-family: Helvetica, arial, sans-serif; vertical-align: baseline; color: rgb(51, 51, 51); orphans: 2; widows: 2; background-color: rgb(255, 255, 255);">Quality-of-Service Requirements</xhtml:span></xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+          </VALUES>
+          <TYPE>
+            <SPECIFICATION-TYPE-REF>_xoqWUDJvEeixmbNi9JE5uQ</SPECIFICATION-TYPE-REF>
+          </TYPE>
+        </SPECIFICATION>
+        <SPECIFICATION DESC="Technology Requirements" IDENTIFIER="_AXzCQDKGEeizNe43yGr0jw" LAST-CHANGE="2018-03-28T16:34:25.327+03:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_xoqWUTJvEeixmbNi9JE5uQ</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p style="">06.Technology Requirements</xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+          </VALUES>
+          <TYPE>
+            <SPECIFICATION-TYPE-REF>_xoqWUDJvEeixmbNi9JE5uQ</SPECIFICATION-TYPE-REF>
+          </TYPE>
+        </SPECIFICATION>
+        <SPECIFICATION IDENTIFIER="_pt6xsDKNEeigMNoA9KyHnA" LAST-CHANGE="2018-03-31T16:42:04.259+03:00" LONG-NAME="DesignRequirements">
+          <VALUES>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_xoqWUTJvEeixmbNi9JE5uQ</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p style="">Design requirements</xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+          </VALUES>
+          <TYPE>
+            <SPECIFICATION-TYPE-REF>_xoqWUDJvEeixmbNi9JE5uQ</SPECIFICATION-TYPE-REF>
+          </TYPE>
+          <CHILDREN>
+            <SPEC-HIERARCHY IDENTIFIER="_1qowQDTbEeiErpklDaKPsA" LAST-CHANGE="2018-03-31T15:05:41.263+03:00">
+              <OBJECT>
+                <SPEC-OBJECT-REF>_1qEIgDTbEeiErpklDaKPsA</SPEC-OBJECT-REF>
+              </OBJECT>
+              <CHILDREN>
+                <SPEC-HIERARCHY IDENTIFIER="_-vgDADTbEeiErpklDaKPsA" LAST-CHANGE="2018-03-31T15:06:39.871+03:00">
+                  <OBJECT>
+                    <SPEC-OBJECT-REF>_-vDXEDTbEeiErpklDaKPsA</SPEC-OBJECT-REF>
+                  </OBJECT>
+                  <CHILDREN/>
+                </SPEC-HIERARCHY>
+                <SPEC-HIERARCHY IDENTIFIER="_JwCYQDTcEeiErpklDaKPsA" LAST-CHANGE="2018-03-31T15:07:55.592+03:00">
+                  <OBJECT>
+                    <SPEC-OBJECT-REF>_JvjQEDTcEeiErpklDaKPsA</SPEC-OBJECT-REF>
+                  </OBJECT>
+                </SPEC-HIERARCHY>
+              </CHILDREN>
+            </SPEC-HIERARCHY>
+          </CHILDREN>
+        </SPECIFICATION>
+        <SPECIFICATION DESC="" IDENTIFIER="_5ZB2UEO9EeirhJCiqnW3-A" LAST-CHANGE="2018-04-19T13:40:47.141+03:00" LONG-NAME="DeploymentTemplate">
+          <VALUES>
+            <ATTRIBUTE-VALUE-ENUMERATION>
+              <VALUES>
+                <ENUM-VALUE-REF>_A0gJYEO-EeirhJCiqnW3-A</ENUM-VALUE-REF>
+              </VALUES>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-ENUMERATION-REF>_BHfXsDQkEeiLFedYwzTs8A</ATTRIBUTE-DEFINITION-ENUMERATION-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-ENUMERATION>
+            <ATTRIBUTE-VALUE-XHTML>
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-XHTML-REF>_1-rQMDQjEeiLFedYwzTs8A</ATTRIBUTE-DEFINITION-XHTML-REF>
+              </DEFINITION>
+              <THE-VALUE>
+                <xhtml:div><xhtml:p style="">Deployment Requirements</xhtml:p></xhtml:div>
+              </THE-VALUE>
+            </ATTRIBUTE-VALUE-XHTML>
+          </VALUES>
+          <TYPE>
+            <SPECIFICATION-TYPE-REF>_xC2PYDQjEeiLFedYwzTs8A</SPECIFICATION-TYPE-REF>
+          </TYPE>
+          <CHILDREN>
+            <SPEC-HIERARCHY IDENTIFIER="_NTcWUEO-EeirhJCiqnW3-A" LAST-CHANGE="2018-04-19T13:41:13.239+03:00">
+              <OBJECT>
+                <SPEC-OBJECT-REF>_NS7Y8EO-EeirhJCiqnW3-A</SPEC-OBJECT-REF>
+              </OBJECT>
+            </SPEC-HIERARCHY>
+          </CHILDREN>
+        </SPECIFICATION>
+      </SPECIFICATIONS>
+    </REQ-IF-CONTENT>
+  </CORE-CONTENT>
+  <TOOL-EXTENSIONS>
+    <REQ-IF-TOOL-EXTENSION>
+      <configuration:ProrToolExtension>
+        <configuration:generalConfiguration>
+          <configuration:ProrGeneralConfiguration>
+            <configuration:labelConfiguration>
+              <configuration:LabelConfiguration>
+                <defaultLabel>ReqIF.ForeignID</defaultLabel>
+                <defaultLabel>ReqIF.Description</defaultLabel>
+                <defaultLabel>Kind</defaultLabel>
+                <defaultLabel>ParamValue</defaultLabel>
+              </configuration:LabelConfiguration>
+            </configuration:labelConfiguration>
+          </configuration:ProrGeneralConfiguration>
+        </configuration:generalConfiguration>
+        <configuration:presentationConfigurations>
+          <configuration:ProrPresentationConfigurations>
+            <configuration:presentationConfigurations>
+              <id:IdConfiguration datatype="_xohMZDJvEeixmbNi9JE5uQ" prefix="REQ-" count="29"/>
+              <id:IdConfiguration datatype="_xohMaTJvEeixmbNi9JE5uQ" prefix="LNK-" count="0"/>
+            </configuration:presentationConfigurations>
+          </configuration:ProrPresentationConfigurations>
+        </configuration:presentationConfigurations>
+      </configuration:ProrToolExtension>
+    </REQ-IF-TOOL-EXTENSION>
+  </TOOL-EXTENSIONS>
+</REQ-IF>

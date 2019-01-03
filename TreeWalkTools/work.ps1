@@ -16,6 +16,6 @@
 #   -Copyright "Gnu GPL v3" 
 
 
-Update-ModuleManifest -Path .\TreeWalkTools\TreeWalkTools.psd1 -ProjectUri "https://github.com/maxromanov/TreeWalk" -LicenseUri "https://raw.githubusercontent.com/maxromanov/TreeWalk/master/LICENSE"
+# Update-ModuleManifest -Path .\TreeWalkTools\TreeWalkTools.psd1 -ProjectUri "https://github.com/maxromanov/TreeWalk" -LicenseUri "https://raw.githubusercontent.com/maxromanov/TreeWalk/master/LICENSE"
 
 # Publish-Module -Name "C:\workspace\orgs\github\TreeWalk\TreeWalkTools" -NuGetApiKey "oy2hgsze3ps7g2dzx6sqkweuaa6slphefdethscpkjs4ou"

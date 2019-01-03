@@ -1,5 +1,5 @@
 #
-# Merge_Xml2Xml.ps1
+# Merge-Xml2Xml.ps1
 #
 function Merge-Xml2Xml {
     <#
@@ -28,18 +28,18 @@ function Merge-Xml2Xml {
 
 	$InputFullPath = ""
 
-	if(![System.IO.Path]::IsPathRooted($ItemPathName)) {
-		$InputFullPath = "$Env:BASEPATH\$ItemPathName"
+	if(![System.IO.Path]::IsPathRooted($InputXml)) {
+		$InputFullPath = "$Env:BASEPATH\$InputXml"
 	} else {
-		$InputFullPath = "$ItemPathName"
+		$InputFullPath = "$InputXml"
 	}
 
 	$OutFullPath = ""
 
-	if( ![System.IO.Path]::IsPathRooted($ProjectPathName) ) {
-		$OutFullPath = "$Env:BASEPATH\$ProjectPathName"
+	if( ![System.IO.Path]::IsPathRooted($OutputXml) ) {
+		$OutFullPath = "$Env:BASEPATH\$OutputXml"
 	} else { 
-		$OutFullPath = "$ProjectPathName"
+		$OutFullPath = "$OutputXml"
 	}
 
 	[TreeWalk.Runner]::Run($InputFullPath,$OutFullPath,"")
