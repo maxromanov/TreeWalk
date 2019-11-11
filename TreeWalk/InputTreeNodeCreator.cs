@@ -14,7 +14,8 @@ namespace TreeWalk
         {
             {".ttl", "TLLInputTreeNode" },
             {".reqif","ReqIFInputNode" },
-            {".archimate", "ArchimateModel" }
+            {".archimate", "ArchimateModel" },
+            {".docx", "DocxInputNode" }
         };
 
 

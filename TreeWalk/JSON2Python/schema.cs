@@ -18,7 +18,7 @@ namespace TreeWalk.JSON2Python
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JSON2Python\schema.tt"
+    #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JSON2Python\schema.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class schema : schemaBase
     {
@@ -28,44 +28,49 @@ namespace TreeWalk.JSON2Python
         /// </summary>
         public virtual string TransformText()
         {
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
             
-            #line 6 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JSON2Python\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JSON2Python\schema.tt"
 
    input.SetName("__init__");
 
             
             #line default
             #line hidden
-            this.Write("# id: ");
+            this.Write("\n# id: ");
             
-            #line 9 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JSON2Python\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JSON2Python\schema.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(input.Property("id")));
             
             #line default
             #line hidden
-            this.Write("\r\n# schema: ");
+            this.Write("\n# schema: ");
             
-            #line 10 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JSON2Python\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JSON2Python\schema.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(input.Property("$schema")));
             
             #line default
             #line hidden
-            this.Write("\r\n# Title: ");
+            this.Write("\n# Title: ");
             
-            #line 11 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JSON2Python\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JSON2Python\schema.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(input.Property("title")));
             
             #line default
             #line hidden
-            this.Write("\r\n# ");
+            this.Write("\n# ");
             
-            #line 12 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JSON2Python\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JSON2Python\schema.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(input.Property("description")));
             
             #line default
             #line hidden
-            this.Write("\r\n#[START import]\r\n\r\nfrom google.appengine.ext import ndb\r\n\r\nimport properties\r\ni" +
-                    "mport definitions\r\n\r\n#[END import]");
+            this.Write("\n#[START import]\n\nfrom google.appengine.ext import ndb\n\nimport properties\nimport " +
+                    "definitions\n\n#[END import]");
             return this.GenerationEnvironment.ToString();
         }
     }

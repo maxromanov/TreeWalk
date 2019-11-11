@@ -18,7 +18,7 @@ namespace TreeWalk.JS2PY
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\schema.tt"
+    #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\schema.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class schema : schemaBase
     {
@@ -28,8 +28,14 @@ namespace TreeWalk.JS2PY
         /// </summary>
         public virtual string TransformText()
         {
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
             
-            #line 7 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\schema.tt"
 
    Uri schemaURI = new Uri(input.FileName);
    String schemaFile = schemaURI.Segments.Last().Split('.').First();
@@ -42,18 +48,18 @@ namespace TreeWalk.JS2PY
             
             #line default
             #line hidden
-            this.Write("# Root schema object generated class\r\n# ");
+            this.Write("\n# Root schema object generated class\n# ");
             
-            #line 17 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\schema.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(input.Property("description")));
             
             #line default
             #line hidden
-            this.Write("\r\n#[START imports]\r\nfrom jsonmodelschema import JObject\r\nfrom jsonmodelschema imp" +
-                    "ort JArray\r\nfrom jsonmodelschema import JNumber\r\nfrom jsonmodelschema import JSt" +
-                    "ring\r\nfrom jsonmodelschema import JMixed\r\n");
+            this.Write("\n#[START imports]\nfrom jsonmodelschema import JObject\nfrom jsonmodelschema import" +
+                    " JArray\nfrom jsonmodelschema import JNumber\nfrom jsonmodelschema import JString\n" +
+                    "from jsonmodelschema import JMixed\n");
             
-            #line 24 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\schema.tt"
 
    foreach(InputTreeNode ModelProperty in input.GetChildren("properties")) {
     if(ModelProperty.HasProperty("$ref") && ModelProperty.Property("$ref").StartsWith("#/definitions/")) {
@@ -62,23 +68,23 @@ namespace TreeWalk.JS2PY
             
             #line default
             #line hidden
-            this.Write("from ");
+            this.Write("\nfrom ");
             
-            #line 29 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\schema.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(RefName));
             
             #line default
             #line hidden
             this.Write(" import ");
             
-            #line 29 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\schema.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(RefName));
             
             #line default
             #line hidden
-            this.Write("\r\n");
+            this.Write("\n");
             
-            #line 30 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\schema.tt"
  
    } else if(ModelProperty.HasPropertyValue("type","array") ) {
 			InputTreeNode items = ModelProperty.PropertyObject("items");
@@ -88,23 +94,23 @@ namespace TreeWalk.JS2PY
             
             #line default
             #line hidden
-            this.Write("from ");
+            this.Write("\nfrom ");
             
-            #line 36 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\schema.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(RefName));
             
             #line default
             #line hidden
             this.Write(" import ");
             
-            #line 36 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\schema.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(RefName));
             
             #line default
             #line hidden
-            this.Write("\r\n");
+            this.Write("\n");
             
-            #line 37 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\schema.tt"
  
 		}
 	}
@@ -113,30 +119,30 @@ namespace TreeWalk.JS2PY
             
             #line default
             #line hidden
-            this.Write("#[END Imports]\r\n\r\nclass ");
+            this.Write("\n#[END Imports]\n\nclass ");
             
-            #line 44 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\schema.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(FileName));
             
             #line default
             #line hidden
-            this.Write("(JObject):\r\n\t\"\"\"");
+            this.Write("(JObject):\n\t\"\"\"");
             
-            #line 45 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\schema.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(input.Property("title")));
             
             #line default
             #line hidden
-            this.Write("\"\"\"\r\n\tdef __init__(self,**kwargs):\r\n\t\tsuper(");
+            this.Write("\"\"\"\n\tdef __init__(self,**kwargs):\n\t\tsuper(");
             
-            #line 47 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\schema.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(FileName));
             
             #line default
             #line hidden
-            this.Write(", self).__init__(**kwargs)\r\n");
+            this.Write(", self).__init__(**kwargs)\n");
             
-            #line 48 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\schema.tt"
 
 		   foreach(InputTreeNode ModelProperty in input.GetChildren("properties")) {
 			if(ModelProperty.HasPropertyValue("type","string")) {
@@ -144,32 +150,32 @@ namespace TreeWalk.JS2PY
             
             #line default
             #line hidden
-            this.Write("\t\tself.");
+            this.Write("\n\t\tself.");
             
-            #line 52 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\schema.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ModelProperty.Name));
             
             #line default
             #line hidden
-            this.Write(" = JString()\r\n");
+            this.Write(" = JString()\n");
             
-            #line 53 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\schema.tt"
 
 			} else if(ModelProperty.HasPropertyValue("type","array")) {
 
             
             #line default
             #line hidden
-            this.Write("\t\tself.");
+            this.Write("\n\t\tself.");
             
-            #line 56 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\schema.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ModelProperty.Name));
             
             #line default
             #line hidden
-            this.Write(" = JArray()\r\n");
+            this.Write(" = JArray()\n");
             
-            #line 57 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\schema.tt"
 
 			} else if(ModelProperty.HasProperty("$ref") && ModelProperty.Property("$ref").StartsWith("#/definitions/")) {
 					 string RefName = ModelProperty.Property("$ref").Substring(14);
@@ -177,23 +183,23 @@ namespace TreeWalk.JS2PY
             
             #line default
             #line hidden
-            this.Write("\t\tself.");
+            this.Write("\n\t\tself.");
             
-            #line 61 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\schema.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ModelProperty.Name));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 61 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\schema.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(RefName));
             
             #line default
             #line hidden
-            this.Write("()\r\n");
+            this.Write("()\n");
             
-            #line 62 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\schema.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\schema.tt"
 
 			}
 }
@@ -201,6 +207,7 @@ namespace TreeWalk.JS2PY
             
             #line default
             #line hidden
+            this.Write("\n");
             return this.GenerationEnvironment.ToString();
         }
     }

@@ -18,7 +18,7 @@ namespace TreeWalk.JSON2Python
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JSON2Python\properties.tt"
+    #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JSON2Python\properties.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class properties : propertiesBase
     {
@@ -28,8 +28,13 @@ namespace TreeWalk.JSON2Python
         /// </summary>
         public virtual string TransformText()
         {
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
             
-            #line 6 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JSON2Python\properties.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JSON2Python\properties.tt"
 
 			if(input.GetName().Equals("properties")) {
 					input.TakeAsArray();
@@ -37,34 +42,34 @@ namespace TreeWalk.JSON2Python
             
             #line default
             #line hidden
-            this.Write("# Properties defined in the schema file \r\n# [START properties]\r\n");
+            this.Write("\n# Properties defined in the schema file \n# [START properties]\n");
             
-            #line 12 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JSON2Python\properties.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JSON2Python\properties.tt"
 
 				foreach(InputTreeNode model in input.childs) {
 
             
             #line default
             #line hidden
-            this.Write("import ");
+            this.Write("\nimport ");
             
-            #line 15 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JSON2Python\properties.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JSON2Python\properties.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(model.Name));
             
             #line default
             #line hidden
-            this.Write("\r\n");
+            this.Write("\n");
             
-            #line 16 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JSON2Python\properties.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JSON2Python\properties.tt"
 
 				}
 
             
             #line default
             #line hidden
-            this.Write("# [END properties]\r\n");
+            this.Write("\n# [END properties]\n");
             
-            #line 20 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JSON2Python\properties.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JSON2Python\properties.tt"
 
 					return this.GenerationEnvironment.ToString();  
 			}
@@ -72,9 +77,9 @@ namespace TreeWalk.JSON2Python
             
             #line default
             #line hidden
-            this.Write("from google.appengine.ext import ndb\r\n\r\n");
+            this.Write("\nfrom google.appengine.ext import ndb\n\n");
             
-            #line 26 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JSON2Python\properties.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JSON2Python\properties.tt"
 
 			if(input.HasProperty("type")) 
 			{
@@ -83,16 +88,16 @@ namespace TreeWalk.JSON2Python
             
             #line default
             #line hidden
-            this.Write("# ");
+            this.Write("\n# ");
             
-            #line 31 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JSON2Python\properties.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JSON2Python\properties.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(input.Property("title")));
             
             #line default
             #line hidden
-            this.Write("\r\nclass ");
+            this.Write("\nclass ");
             
-            #line 32 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JSON2Python\properties.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JSON2Python\properties.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(input.GetNameForClassName()));
             
             #line default
@@ -110,7 +115,7 @@ namespace TreeWalk.JSON2Python
 
 ");
             
-            #line 43 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JSON2Python\properties.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JSON2Python\properties.tt"
 
         } //if(input.Property("type").Equals("string"))
       } // if(input.HasProperty("type")) 
@@ -118,6 +123,7 @@ namespace TreeWalk.JSON2Python
             
             #line default
             #line hidden
+            this.Write("\n");
             return this.GenerationEnvironment.ToString();
         }
     }

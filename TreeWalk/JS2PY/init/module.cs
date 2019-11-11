@@ -18,7 +18,7 @@ namespace TreeWalk.JS2PY.init
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\init\module.tt"
+    #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\init\module.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class module : moduleBase
     {
@@ -28,43 +28,48 @@ namespace TreeWalk.JS2PY.init
         /// </summary>
         public virtual string TransformText()
         {
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
             
-            #line 6 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\init\module.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\init\module.tt"
  
    FileName = "__init__";
 
             
             #line default
             #line hidden
-            this.Write("# Generating scrapy item classes on JSON schema\r\n# id: ");
+            this.Write("\n# Generating scrapy item classes on JSON schema\n# id: ");
             
-            #line 10 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\init\module.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\init\module.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(input.Property("id")));
             
             #line default
             #line hidden
-            this.Write("\r\n# schema: ");
+            this.Write("\n# schema: ");
             
-            #line 11 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\init\module.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\init\module.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(input.Property("$schema")));
             
             #line default
             #line hidden
-            this.Write("\r\n# Title: ");
+            this.Write("\n# Title: ");
             
-            #line 12 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\init\module.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\init\module.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(input.Property("title")));
             
             #line default
             #line hidden
-            this.Write("\r\n# ");
+            this.Write("\n# ");
             
-            #line 13 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JS2PY\init\module.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JS2PY\init\module.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(input.Property("description")));
             
             #line default
             #line hidden
-            this.Write("\r\n");
+            this.Write("\n");
             return this.GenerationEnvironment.ToString();
         }
     }

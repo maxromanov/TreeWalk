@@ -18,7 +18,7 @@ namespace TreeWalk.JSON2Python
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JSON2Python\required.tt"
+    #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JSON2Python\required.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class required : requiredBase
     {
@@ -28,8 +28,13 @@ namespace TreeWalk.JSON2Python
         /// </summary>
         public virtual string TransformText()
         {
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
+            this.Write("\n");
             
-            #line 6 "C:\Users\DEV\documents\visual studio 2017\Projects\DigitalTwins\TreeWalk\JSON2Python\required.tt"
+            #line 1 "C:\workspace\orgs\maxromanov\TreeWalk\TreeWalk\JSON2Python\required.tt"
 
 		if(input.GetName().Equals("required")) {
 				input.TakeAsArray();
@@ -39,6 +44,7 @@ namespace TreeWalk.JSON2Python
             
             #line default
             #line hidden
+            this.Write("\n");
             return this.GenerationEnvironment.ToString();
         }
     }

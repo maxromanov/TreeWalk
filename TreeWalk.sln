@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeWalkExt", "TreeWalkExt\
 EndProject
 Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "TreeWalkTools", "TreeWalkTools\TreeWalkTools.pssproj", "{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeWalkDocx", "TreeWalkDocx\TreeWalkDocx.csproj", "{1155B526-EBAB-4A38-82C7-6EDC5A4DC024}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeWalkDocxTest", "TreeWalkDocxTest\TreeWalkDocxTest.csproj", "{DAD1AA23-D9A7-4E74-86DE-7A26D0025F0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1155B526-EBAB-4A38-82C7-6EDC5A4DC024}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1155B526-EBAB-4A38-82C7-6EDC5A4DC024}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1155B526-EBAB-4A38-82C7-6EDC5A4DC024}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1155B526-EBAB-4A38-82C7-6EDC5A4DC024}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAD1AA23-D9A7-4E74-86DE-7A26D0025F0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAD1AA23-D9A7-4E74-86DE-7A26D0025F0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAD1AA23-D9A7-4E74-86DE-7A26D0025F0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAD1AA23-D9A7-4E74-86DE-7A26D0025F0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
