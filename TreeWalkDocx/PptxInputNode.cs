@@ -11,20 +11,20 @@ using TreeWalk;
 
 namespace TreeWalkDocx
 {
-    public class DocxInputNode : InputTreeNode
+    public class PptxInputNode : InputTreeNode
     {
-        WordprocessingDocument file;
+        PresentationDocument file;
         readonly OpenXmlElement root;
         readonly OpenXmlElement curr;
                      
-        public DocxInputNode(string URL)
+        public PptxInputNode(string URL)
         {
             FileName = URL;
-            file = WordprocessingDocument.Open(FileName, false);
-            root = file.MainDocumentPart.RootElement;            
+            file = PresentationDocument.Open(FileName, false);
+            root = file.PresentationPart.Presentation; 
         }
 
-        public DocxInputNode(InputTreeNode _parent, OpenXmlElement current) : base(_parent)
+        public PptxInputNode(InputTreeNode _parent, OpenXmlElement current) : base(_parent)
         {
             this.curr = current;
         }
@@ -42,7 +42,7 @@ namespace TreeWalkDocx
         public override string getClassName()
         {
             OpenXmlElement o = root ?? curr;
-            return o.LocalName;            
+            return o.GetType().Name;            
         }
 
         public override bool MoveNextAtttribute(ref object context)

@@ -54,7 +54,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DocxElementAttribute.cs" />
+    <Compile Include="OpenXmlElementAttribute.cs" />
+    <Compile Include="PptxInputNode.cs" />
     <Compile Include="DocxInputNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
