@@ -1,0 +1,18 @@
+{
+    "$schema":  "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion":  "1.0.0.0",
+    "parameters":  {
+                       "SolutionID":  {
+                                          "value":  "BrightBankWebApp"
+                                      },
+                       "sitename":  {
+                                        "value":  "brightbank"
+                                    },
+                       "Location":  {
+                                        "value":  "North Europe"
+                                    },
+                       "FarmSku":  {
+                                       "value":  "D1 Shared D1 D 0"
+                                   }
+                   }
+}

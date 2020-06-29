@@ -26,6 +26,13 @@ namespace TreeWalk
             if (root.Type == JTokenType.Array) TakeAsArray();
             FileName = URL;
             rootName = URL;
+            if(root.Type == JTokenType.Object)
+            {
+                if((root as JObject).Property("$schema") != null )
+                {
+                    Schema = new JSONSchema((root as JObject).Property("$schema").Value.ToString() );
+                }
+            }
         }
 
         public JSONInputTreeNode(InputTreeNode _parent,JToken child):base(_parent)

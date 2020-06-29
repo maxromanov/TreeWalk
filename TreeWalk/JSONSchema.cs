@@ -191,6 +191,7 @@ namespace TreeWalk
                     if (!schemaFound) return null;
                 }
             }
+
             if (cs.Type == JSchemaType.Array && cs.Items.Count == 1)
                 foreach (JSchema item in cs.Items)
                   if(item.Type == JSchemaType.Object) cs = item;
@@ -206,6 +207,10 @@ namespace TreeWalk
             }
             catch(Exception e)
             {
+                if(cs.AllowAdditionalProperties)
+                {
+                    return cs;
+                }
                 throw new Exception("Can't find property schema  for  "+prop_name+" property at the position "+path, e);
             }
         }
@@ -340,6 +345,10 @@ namespace TreeWalk
                         id_value += "'";
                     }
                     return id_value;
+                }
+                else if (prop_schema.Type == JSchemaType.Object && prop_schema.AllowAdditionalProperties)
+                {
+                    return id_value + "property=\'" + (i as JProperty).Name + "\'";
                 }
 
             }

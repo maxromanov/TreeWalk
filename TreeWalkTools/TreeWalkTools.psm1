@@ -16,6 +16,7 @@ Add-Type -Path $DllPath
 
 . "$PSScriptRoot\Merge-Xml2Xml.ps1"
 . "$PSScriptRoot\Merge-Dir2Dir.ps1"
+. "$PSScriptRoot\Merge-Json.ps1"
 
-Export-ModuleMember -Function 'Merge-Xml2Xml', 'Merge-Dir2Dir'
+Export-ModuleMember -Function 'Merge-Xml2Xml', 'Merge-Dir2Dir', 'Merge-Json'
 Export-ModuleMember -Variable 'TreeWalkPath'

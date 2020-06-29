@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Schema;
+using System;
 
 namespace TreeWalk
 {
@@ -32,6 +33,11 @@ namespace TreeWalk
             Uri full = new Uri(uri);
             string path = full.GetLeftPart(UriPartial.Path);
             return null;
+        }
+
+        public static implicit operator InputSchema(JsonSchema v)
+        {
+            throw new NotImplementedException();
         }
     }
 

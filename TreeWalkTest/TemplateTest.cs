@@ -15,8 +15,8 @@ namespace TreeWalkTest
 
         [TestMethod()]
         public void TemplatingUseCaseTest()
-        { 
-            Environment.SetEnvironmentVariable("BASEDIR",ConfigConst.BASEDIR);
+        {
+            ConfigConst.AssemblyDir();
             Logging.SetLevel(Level.Info);
             Logging.Info("Start: TemplatingUseCaseTest");
             Runner.Defaults();
@@ -26,7 +26,7 @@ namespace TreeWalkTest
             TreeWalk.Runner.Run(
                 ConfigConst.MkPath("src\\InFolder1\\"),
                 ConfigConst.MkPath("dst\\OutFolder\\"),
-                ConfigConst.MkPath("..\\TreeWalk\\STPL\\")
+                ConfigConst.MkPath("STPL\\")
             );           
            
 

@@ -1,7 +1,7 @@
-﻿# Import-Module -Name "$PSScriptRoot\TreeWalkTools.psm1" -Verbose
+﻿ Import-Module -Name "$PSScriptRoot\TreeWalkTools.psm1" -Verbose
 
 
-# $TreeWalkPackage = Get-Package TreeWalk
+ #$TreeWalkPackage = Get-Package TreeWalk
 
 # if(!$TreeWalkPackage) {
 #	Install-Package TreeWalk -Verbose  -Scope CurrentUser -SkipDependencies
@@ -18,4 +18,4 @@
 
 # Update-ModuleManifest -Path .\TreeWalkTools\TreeWalkTools.psd1 -ProjectUri "https://github.com/maxromanov/TreeWalk" -LicenseUri "https://raw.githubusercontent.com/maxromanov/TreeWalk/master/LICENSE"
 
-# Publish-Module -Name "C:\workspace\orgs\github\TreeWalk\TreeWalkTools" -NuGetApiKey "oy2hgsze3ps7g2dzx6sqkweuaa6slphefdethscpkjs4ou"
+# Publish-Module -Name "C:\workspace\orgs\github\TreeWalk\TreeWalkTools" -NuGetApiKey "oy2ja4ziaiy46uxiqy4qx3k6zo3hamnevlh2j6w64cxeo4"

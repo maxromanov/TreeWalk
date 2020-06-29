@@ -40,16 +40,19 @@
     <Reference Include="Newtonsoft.Json.Schema, Version=3.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArchimateSchemaTests.cs" />
     <Compile Include="ConfigConst.cs" />
     <Compile Include="JSONInputTreeNodeTests.cs" />
+    <Compile Include="JsonMergeTest.cs" />
     <Compile Include="OCDSSpecificTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReqIFInputNodeTests.cs" />
     <Compile Include="TemplateTest.cs" />
     <Compile Include="LibraryGenTest.cs" />
+    <Compile Include="TreeWalkTestBase.cs" />
     <Compile Include="XMLMergeTest.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,7 +66,15 @@
     <None Include="job_~012f1a5fe770bb6afe_release.ocds">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="src\ClientBM.archimate" />
+    <None Include="json\1\out.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="json\1\in.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="src\ClientBM.archimate">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="src\OwnBM.archimate">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -86,6 +97,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="dst\OutFolder\test_one.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="in.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -96,11 +110,11 @@
     <Content Include="out_start.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="src\InFolder1\test_one.xslt" />
+    <Content Include="src\InFolder1\test_one.xslt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="dst\OutFolder\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>

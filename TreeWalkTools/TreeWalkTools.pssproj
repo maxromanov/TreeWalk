@@ -28,6 +28,7 @@
   <ItemGroup />
   <ItemGroup>
     <Compile Include="Merge-Dir2Dir.ps1" />
+    <Compile Include="Merge-Json.ps1" />
     <Compile Include="Merge-Xml2Xml.ps1" />
     <Compile Include="RunspaceTest.tests.ps1" />
     <Compile Include="TreeWalkTools.psd1" />

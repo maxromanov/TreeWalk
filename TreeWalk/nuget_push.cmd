@@ -1,3 +1,3 @@
 ﻿dir TreeWalk*.nupkg
 nuget pack
-nuget push TreeWalk*.nupkg  oy2mgnoulqkogqurujxqhijv37disumelouq25dl4qohdy -Source https://api.nuget.org/v3/index.json
+nuget push TreeWalk*.nupkg  oy2ja4ziaiy46uxiqy4qx3k6zo3hamnevlh2j6w64cxeo4 -Source https://api.nuget.org/v3/index.json
