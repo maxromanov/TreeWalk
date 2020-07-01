@@ -23,4 +23,13 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '**\*.sln'
-
+- task: NuGetCommand@2
+  inputs:
+    command: 'pack'
+    packagesToPack: '**/*.nuspec'
+    versioningScheme: 'off'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.SourcesDirectory)/TreeWalk/*.nupkg'
+    ArtifactName: 'NuGetPackage'
+    publishLocation: 'Container'
