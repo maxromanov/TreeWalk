@@ -22,7 +22,7 @@ steps:
 - task: NuGetCommand@2
   inputs:
     command: 'pack'
-    packagesToPack: '$(Build.SourcesDirectory)/TreeWalk/*.*'
+    packagesToPack: '$(Build.SourcesDirectory)/TreeWalk/*.csproj'
     versioningScheme: 'off'
 - task: PublishBuildArtifacts@1
   inputs:
