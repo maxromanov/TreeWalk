@@ -267,7 +267,7 @@ namespace TreeWalk
             XmlElement e = current ?? document.DocumentElement;
             if (inputPath == "") return this;
             InputPath path = new InputPath(inputPath,'/');
-            string latestPath = "";
+            string latestPath = "/";
             InputTreeNode parent = null;
             InputTreeNode obj = null;
 

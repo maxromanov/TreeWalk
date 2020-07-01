@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace TreeWalk
@@ -13,6 +14,11 @@ namespace TreeWalk
 
         public string Name { get => name; set => name = value; }
         public string Query { get => query; set => query = value; }
+
+        public override string ToString()
+        {
+            return name + "[" + query + "]";
+        }
     }
     class InputPath
     {
@@ -23,35 +29,40 @@ namespace TreeWalk
 
 
         private void ParsePath(string path)
-        {
-            string[] components = path.Split('[');
-            bool isQueryStart = false;
-            InputPathSegment segment = new InputPathSegment();
-            bool first = true;
+        {            
+            List<string> components = new List<string>();
+            int bracket_level = 0;
+            string curr = "";
+            foreach(var c in path)
+                if(bracket_level > 0)       {
+                    curr += c;
+                    if (c == '[') bracket_level++;
+                    if (c == ']') bracket_level--;
+                }  else {                    
+                    curr += c;
+                    if (c == '[') bracket_level++;
+                    if (c == separator)
+                    {
+                        if(!string.IsNullOrEmpty(curr.Trim(separator)))
+                          components.Add(curr.Trim(separator));
+                        curr = "";
+                    }                    
+                }
+            components.Add(curr.Trim('.'));
+                        
             foreach (string component in components)
             {
-                isQueryStart = (component.IndexOf(']') >= 0);
+                InputPathSegment segment = new InputPathSegment();                
+                int QueryPos = component.IndexOf('[');
                 string current = component;
-                if (isQueryStart)
-                {
-                    segment.Query = component.Substring(0, component.IndexOf(']'));
-                    current = component.Substring(component.IndexOf(']') + 1);
-                }
-                current = current.Trim(separator);
-                string[] steps = current.Split(separator);
-                foreach (string step in steps)
-                {
-                    if (!first)
-                    {
-                        segments.Add(segment);
-                        segment = new InputPathSegment();
-                    }                    
-                    segment.Name = step;
-                    if (segment.Name.StartsWith("x:")) segment.Name = segment.Name.Substring(2);
-                    first = false;
-                }
-            }
-            if (segment.Name != "") segments.Add(segment);
+                if (QueryPos >= 0)       {
+                    segment.Query = component.Substring(component.IndexOf('[')+1, component.LastIndexOf(']') - component.IndexOf('[') - 1);
+                    current = component.Substring(0,component.IndexOf('['));
+                }                                
+                segment.Name = current;
+                if (segment.Name.StartsWith("x:")) segment.Name = segment.Name.Substring(2);
+                segments.Add(segment);
+            }            
         }
 
         public InputPath(string path)

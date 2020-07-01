@@ -471,7 +471,8 @@ namespace TreeWalk
                         JSchema propertySchema = ((JSONSchema)Schema).getPropertySchema(insertSegment.Name, tokenToAddChild.Path);
                         JToken empty = null;
                         if (propertySchema.Type == JSchemaType.Object) empty = new JObject();
-                        else if (propertySchema.Type == JSchemaType.Array) empty = new JArray();                  
+                        else if (propertySchema.Type == JSchemaType.Array) empty = new JArray();
+                        else empty = new JObject();
                         ((JObject)tokenToAddChild).Add(insertSegment.Name, empty);
                         propToAddChild = ((JObject)tokenToAddChild).Property(insertSegment.Name);
                     }
@@ -479,7 +480,7 @@ namespace TreeWalk
                 }
             }
 
-            string id_trunc = id.Substring(2);
+            string id_trunc = id.Substring(2).TrimStart('&');
             string[] id_pairs = id_trunc.Split('&');
             Dictionary<string, string> ids = new Dictionary<string, string>();
             bool emptyArray = false;
@@ -512,7 +513,6 @@ namespace TreeWalk
                 ((JArray)tokenToAddChild).Add(val);
                 return null;
             }
-
             if (tokenToAddChild.Type == JTokenType.Object && !addPropery )
             {                
                 foreach (KeyValuePair<string,string> pair in ids)

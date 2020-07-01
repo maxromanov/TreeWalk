@@ -1,0 +1,35 @@
+﻿{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "SolutionID": {
+      "defaultValue": "CustomDomain",
+      "type": "String"
+    },
+    "sitename": {
+      "type": "string",
+      "defaultValue": "mymoodle"
+    },
+    "Location": {
+      "defaultValue": "[resourceGroup().location]",
+      "type": "string"
+    },
+    "domainname": {
+      "type": "string",
+      "defaultValue": "www.example.com"
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Web/sites/hostNameBindings",
+      "apiVersion": "2018-11-01",
+      "name": "[concat(parameters('sitename'), '/', parameters('domainname'))]",
+      "location": "North Europe",
+      "dependsOn": [ "[resourceId('Microsoft.Web/sites', parameters('sitename'))]" ],
+      "properties": {
+        "siteName": "[parameters('sitename')]",
+        "hostNameType": "Verified"
+      }
+    }
+  ]
+}

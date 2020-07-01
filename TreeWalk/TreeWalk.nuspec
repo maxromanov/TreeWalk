@@ -21,8 +21,8 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="STPL\*" target="lib\net461\STPL" />
-    <file src="bin\Debug\*.dll" target="lib\net461" />  
-    <file src="TreeWalk.log4net.config" target="lib\net461" />
+    <file src="STPL\*" target="lib\net472\STPL" />
+    <file src="bin\Debug\*.dll" target="lib\net472" />  
+    <file src="TreeWalk.log4net.config" target="lib\net472" />
   </files>
 </package>

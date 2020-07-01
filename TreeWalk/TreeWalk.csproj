@@ -127,7 +127,7 @@
     <None Include="JSONPS\tender.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="nuget_push.cmd" />
+    <None Include="nuget_push.ps1" />
     <None Include="PrintStruct\rules.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -225,7 +225,7 @@
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties BuildVersion_BuildVersioningStyle="None.None.Increment.Increment" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_UpdateFileVersion="True" BuildVersion_BuildAction="ReBuild" BuildVersion_StartDate="2015/1/1" BuildVersion_ConfigurationName="Any" BuildVersion_UseUniversalClock="True" />
+      <UserProperties BuildVersion_UseUniversalClock="True" BuildVersion_ConfigurationName="Any" BuildVersion_StartDate="2015/1/1" BuildVersion_BuildAction="ReBuild" BuildVersion_UpdateFileVersion="True" BuildVersion_UpdateAssemblyVersion="True" BuildVersion_BuildVersioningStyle="None.None.Increment.Increment" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

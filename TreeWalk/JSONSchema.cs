@@ -88,51 +88,22 @@ namespace TreeWalk
                                         if (c.Property(key_name).Value.Type == JTokenType.Integer)
                                             id_value += "@." + key_name + "==" + key_value + "";
                                         else
-                                            id_value += "@." + key_name + "=='" + key_value + "'";
+                                            id_value += "@." + key_name + "=='" + key_value.Replace("'", "\\'") + "'";
                                     }
                                 }
                             }
-                            else if(item.Type == null && item.AnyOf.Count > 0)
-                            {
-                                foreach(JSchema variant in item.AnyOf)
-                                {
-                                    
-                                    if(variant.Type == JSchemaType.Object && variant.Required.Count > 0)
-                                    {
-                                        JObject c = (JObject)current.Root.SelectToken(inputPath);
-                                        string keys_variant_str = "";
-                                        bool keys_found = true;
-                                        foreach (string key_name in variant.Required)
-                                        {
-                                            if (c.Property(key_name) != null) {
-                                                if (c.Property(key_name).Value.Type == JTokenType.Array) continue;
-                                                string key_value = c.Property(key_name).Value.ToString();
-                                                if (keys_variant_str != "") keys_variant_str += " && ";
-                                                keys_variant_str += "@." + key_name + "==";
-                                                if (c.Property(key_name).Value.Type == JTokenType.Integer)
-                                                    keys_variant_str += key_value ;
-                                                else keys_variant_str += "'" + key_value + "'";
-                                            }
-                                            else {
-                                                keys_found = false;
-                                                break;
-                                            }
-                                        }
-                                        if(keys_found)
-                                        {
-                                            id_value += keys_variant_str;
-                                            break;
-                                        }
-
-                                    }
-                                }
-                            }
+                            else if(item.Type == null && item.AnyOf.Count > 0)                            
+                                id_value += GetPathFromVarians(item.OneOf, current, inputPath);                            
+                            else if(item.Type == null && item.OneOf.Count > 0)                            
+                                id_value += GetPathFromVarians(item.OneOf,current,inputPath);
+                            else if (item.Type == null && item.AllOf.Count > 0)
+                                id_value += GetPathFromVarians(item.OneOf, current, inputPath);
                             else 
                             {
                                 JToken c = current.Root.SelectToken(inputPath);
                                 if(c.Type == JTokenType.String)
                                 {
-                                    id_value += "@ == '" + c.ToString() + "'";
+                                    id_value += "@ == '" + c.ToString().Replace("'", "\\'") + "'";
                                 }
                             }
                         }
@@ -147,6 +118,56 @@ namespace TreeWalk
             return result;
         }
 
+        private string GetPathFromVarians(IList<JSchema> someOf, JToken current, string inputPath)
+        {            
+            foreach (JSchema variant in someOf)
+            {
+                if (variant.Type == JSchemaType.Object && variant.Required.Count > 0)
+                {
+                    var o = current.Root.SelectToken(inputPath);
+                    if (o is JObject)
+                    {
+                        JObject c = (JObject)o;
+                        string keys_variant_str = "";
+                        bool keys_found = true;
+                        foreach (string key_name in variant.Required)
+                        {
+                            if (c.Property(key_name) != null)
+                            {
+                                if (c.Property(key_name).Value.Type == JTokenType.Array) continue;
+                                string key_value = c.Property(key_name).Value.ToString();
+                                if (keys_variant_str != "") keys_variant_str += " && ";
+                                keys_variant_str += "@." + key_name + "==";
+                                if (c.Property(key_name).Value.Type == JTokenType.Integer)
+                                    keys_variant_str += key_value;
+                                else keys_variant_str += "'" + key_value.Replace("'", "\\'") + "'";
+                            }
+                            else
+                            {
+                                keys_found = false;
+                                break;
+                            }
+                        }
+                        if (keys_found)
+                        {
+                            return keys_variant_str;
+                        }
+                    }
+                    else
+                    {
+                        return "@ == '" + o.ToString().Replace("'", "\\'") + "'";
+                    }
+                }
+                else if(variant.Type == null && variant.AnyOf.Count > 0 )                
+                    return GetPathFromVarians(variant.AnyOf,current,inputPath);
+                else if (variant.Type == null && variant.OneOf.Count > 0)
+                    return GetPathFromVarians(variant.OneOf, current, inputPath);
+                else if (variant.Type == null && variant.AllOf.Count > 0)
+                    return GetPathFromVarians(variant.AllOf, current, inputPath);
+            }
+            return "";
+        }
+
         public JSchema getPropertySchema(string prop_name, string path)
         {
             if(path == "")
@@ -159,60 +180,73 @@ namespace TreeWalk
             {
                 if (cs.Type == JSchemaType.Object)
                 {
-                    if (!cs.Properties.ContainsKey(segment.Name)) return null;
+                    if (!cs.Properties.ContainsKey(segment.Name))
+                    {
+                        if(cs.AllowAdditionalProperties && cs.AdditionalProperties != null)
+                        {
+                            cs = cs.AdditionalProperties;
+                            continue;
+                        }
+                        return null;
+                    }
                     cs = cs.Properties[segment.Name];
+                    if(cs.Type == JSchemaType.Array && segment.Query != "" && cs.Items.Count == 1)
+                    {
+                        cs = SearchPropInArraySchema(prop_name,cs.Items[0]);
+                        return cs;
+                    }
                 }
                 else if( cs.Type == JSchemaType.Array)
                 {
-                    bool schemaFound = false;
-                    foreach(JSchema item in cs.Items)
+                    foreach(var item in cs.Items)
                     {
-                        if (item.Type == JSchemaType.Object)
-                        {
-                            if (item.Properties.ContainsKey(segment.Name))
-                            {
-                                cs = item.Properties[segment.Name];
-                                schemaFound = true;
-                                break;
-                            }
-                        } else if(item.AnyOf.Count > 0)
-                        {
-                            foreach(JSchema variant in item.AnyOf)
-                                if(variant.Properties.ContainsKey(segment.Name))
-                                {
-                                    cs = variant.Properties[segment.Name];
-                                    schemaFound = true;
-                                    break;
-
-                                }
-                            if (schemaFound) break;
-                        }
+                        var res = SearchPropInArraySchema(prop_name, item);
+                        if (res != null) return res;
                     }
-                    if (!schemaFound) return null;
                 }
             }
-
-            if (cs.Type == JSchemaType.Array && cs.Items.Count == 1)
-                foreach (JSchema item in cs.Items)
-                  if(item.Type == JSchemaType.Object) cs = item;
-                  else if(item.Type == null && item.AnyOf.Count > 0)
-                    {
-                        foreach (JSchema variant in item.AnyOf)
-                            if (variant.Properties.ContainsKey(prop_name))
-                                return variant.Properties[prop_name];
-                    }
-            try
+                        
+            if(cs.Properties.ContainsKey(prop_name)) return cs.Properties[prop_name];
+            if (cs.AllowAdditionalProperties && cs.AdditionalProperties != null)
             {
-                return cs.Properties[prop_name];
+                if (cs.AdditionalProperties.Type == JSchemaType.Object && cs.AdditionalProperties.Properties.ContainsKey(prop_name))
+                    return cs.AdditionalProperties.Properties[prop_name];
+                return cs.AdditionalProperties;
             }
-            catch(Exception e)
+            return null;
+        }
+
+        private JSchema SearchPropInArraySchema(string prop_name, JSchema cs)
+        {            
+            if (cs.Type == JSchemaType.Object)
             {
-                if(cs.AllowAdditionalProperties)
+                if(cs.Properties.ContainsKey(prop_name)) return cs.Properties[prop_name];
+                if (cs.AllowAdditionalProperties && cs.AdditionalProperties != null)
                 {
-                    return cs;
+                    if (cs.AdditionalProperties.Type == JSchemaType.Object && cs.AdditionalProperties.Properties.ContainsKey(prop_name))
+                        return cs.AdditionalProperties.Properties[prop_name];
+                    return cs.AdditionalProperties;
                 }
-                throw new Exception("Can't find property schema  for  "+prop_name+" property at the position "+path, e);
+                return null;
             }
+            else if (cs.Type == null)
+            {
+                foreach (var child in cs.OneOf )        {
+                    var res = SearchPropInArraySchema(prop_name, child);
+                    if (res != null) return res;
+                }
+                foreach (var child in cs.AnyOf)
+                {
+                    var res = SearchPropInArraySchema(prop_name, child);
+                    if (res != null) return res;
+                }
+                foreach (var child in cs.AllOf)
+                {
+                    var res = SearchPropInArraySchema(prop_name, child);
+                    if (res != null) return res;
+                }
+            }
+            return null;
         }
 
         internal InputTreeNode getNodeByPath(JToken targetToken, string inputPath, InputTreeNode targetNode)
@@ -241,25 +275,33 @@ namespace TreeWalk
             {
                 latestPath += "." + segment.Name;
                 latestPath = latestPath.Trim('.');
-                if (segment.Query != "") latestPath += "[" + segment.Query + "]";
                 obj = targetToken.Root.SelectToken(latestPath);
+                if(obj != null)
+                {
+                    latestParent = obj;
+                    if (obj.Type == JTokenType.Array)
+                    {
+                        if (segment.Query != "") latestPath += "[" + segment.Query + "]";
+                        obj = targetToken.Root.SelectToken(latestPath);
+                    }
+                }                
                 if(obj == null) {
                     if (latestParent == targetToken) return targetNode;
                     return new JSONInputTreeNode(targetNode, latestParent);
                 }
                 latestParent = obj;
             }
-
             return targetNode;
         }
 
         internal string getIDasString(JToken i)
         {
             JToken objToid = i;
-            if( (i.Type == JTokenType.Object) && (i == i.Root) )  return "__$";
-            if ((i.Type == JTokenType.Property) && (((JProperty)i).Value.Type == JTokenType.Object)) objToid = ((JProperty)i).Value;
-
-            if(objToid.Type == JTokenType.Object )
+            if ( (i.Type == JTokenType.Object) && (i == i.Root) )  return "__$";
+            if ( (i.Type == JTokenType.Property) && (((JProperty)i).Value.Type == JTokenType.Object)) objToid = ((JProperty)i).Value;
+            
+            
+            if (  objToid.Type == JTokenType.Object )
             {
                 JToken parentProperty = objToid.Parent;
                 while(parentProperty.Type != JTokenType.Property) {
@@ -297,31 +339,12 @@ namespace TreeWalk
                             }
                         }
                         else if (item.Type == null && item.AnyOf.Count > 0)
-                        {
-                            foreach(JSchema variant in item.AnyOf)
-                            {
-                                string key_variant_str = "";
-                                bool keys_found = true;
-                                foreach (string key_name in variant.Required)
-                                {
-                                    if (((JObject)objToid).Property(key_name) != null)   {
-                                        if (((JObject)objToid).Property(key_name).Value.Type == JTokenType.Array) continue;
-                                        string key_value = ((JObject)objToid).Property(key_name).Value.ToString();
-                                        if (key_variant_str != "") key_variant_str += "&";
-                                        key_variant_str += key_name + "='" + key_value + "'";
-                                    }
-                                    else {
-                                        keys_found = false;
-                                        break;
-                                    }
-                                }
-                                if(keys_found)
-                                {
-                                    id_value += key_variant_str;
-                                    break;
-                                }
-                            }
-                        }
+                                id_value += GetIDFromVarians(item.AnyOf, objToid, objToid.Path);
+                        else if (item.Type == null && item.OneOf.Count > 0)
+                            id_value += GetIDFromVarians(item.OneOf, objToid, objToid.Path);
+                        else if (item.Type == null && item.AllOf.Count > 0)
+                            id_value += GetIDFromVarians(item.AllOf, objToid, objToid.Path);
+
                         if ((i.Type == JTokenType.Property) && (((JProperty)i).Value.Type == JTokenType.Object))
                         {
                             id_value += "&property=" + ((JProperty)i).Name;
@@ -348,9 +371,59 @@ namespace TreeWalk
                 }
                 else if (prop_schema.Type == JSchemaType.Object && prop_schema.AllowAdditionalProperties)
                 {
-                    return id_value + "property=\'" + (i as JProperty).Name + "\'";
+                    return id_value + "property=\'" + (parentProperty as JProperty).Name + "\'";
+                }
+                else if( i.Type == JTokenType.Property )
+                {
+                    return getIDasString(parentObject) + "&property=\'" + (i as JProperty).Name + "\'";
                 }
 
+            }
+            if ( i.Type == JTokenType.Array && i.Parent.Type == JTokenType.Property )
+            {
+                if (!i.HasValues) return "__";
+            }
+            return "";
+        }
+
+        private string GetIDFromVarians(IList<JSchema> someOf, JToken current, string inputPath)
+        {
+            foreach (JSchema variant in someOf)
+            {
+                if (variant.Type == JSchemaType.Object && variant.Required.Count > 0)
+                {
+                    JObject c = (JObject)current.Root.SelectToken(inputPath);
+                    string keys_variant_str = "";
+                    bool keys_found = true;
+                    foreach (string key_name in variant.Required)
+                    {
+                        if (c.Property(key_name) != null)
+                        {
+                            if (c.Property(key_name).Value.Type == JTokenType.Array) continue;
+                            string key_value = c.Property(key_name).Value.ToString();
+                            if (keys_variant_str != "") keys_variant_str += "&";
+                            keys_variant_str += "" + key_name + "=";
+                            if (c.Property(key_name).Value.Type == JTokenType.Integer)
+                                keys_variant_str += key_value;
+                            else keys_variant_str += "'" + key_value + "'";
+                        }
+                        else
+                        {
+                            keys_found = false;
+                            break;
+                        }
+                    }
+                    if (keys_found)
+                    {
+                        return keys_variant_str;
+                    }
+                }
+                else if (variant.Type == null && variant.AnyOf.Count > 0)
+                    return GetIDFromVarians(variant.AnyOf, current, inputPath);
+                else if (variant.Type == null && variant.OneOf.Count > 0)
+                    return GetIDFromVarians(variant.OneOf, current, inputPath);
+                else if (variant.Type == null && variant.AllOf.Count > 0)
+                    return GetIDFromVarians(variant.AllOf, current, inputPath);
             }
             return "";
         }

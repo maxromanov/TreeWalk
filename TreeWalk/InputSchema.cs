@@ -34,11 +34,7 @@ namespace TreeWalk
             string path = full.GetLeftPart(UriPartial.Path);
             return null;
         }
-
-        public static implicit operator InputSchema(JsonSchema v)
-        {
-            throw new NotImplementedException();
-        }
+                
     }
 
     public class InputAttributeDef
