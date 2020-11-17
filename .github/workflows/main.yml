@@ -25,4 +25,4 @@ jobs:
       - uses: microsoft/setup-msbuild@v1
       - run: nuget restore TreeWalk.sln
       - run: msbuild TreeWalk.sln /p:Configuration=Release
-      - run: msbuild.exe /t:Test TreeWalk.sln 
+      - run: '& "$(vswhere -property installationPath)\Common7\IDE\MSTest.exe" /help'
