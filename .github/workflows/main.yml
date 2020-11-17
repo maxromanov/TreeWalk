@@ -22,6 +22,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - uses: nuget/setup-nuget@v1
+      - uses: microsoft/setup-msbuild@v1
       - run: nuget restore TreeWalk.sln
       - run: msbuild TreeWalk.sln /p:Configuration=Release
             
