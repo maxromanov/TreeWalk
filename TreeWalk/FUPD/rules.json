@@ -1,0 +1,11 @@
+{
+  "id": "update_dir_copy",
+  "queries": {
+    "default": {
+      "query": "*.*",
+      "query_type": "WildcardPattern",
+      "result": "true",
+      "script": "copy.ps1"
+    }
+  }
+}

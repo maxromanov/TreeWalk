@@ -14,15 +14,23 @@
     <copyright>GNU GPL v3</copyright>
     <tags>XML JSON Merge Diff</tags>
     <dependencies>
-      <dependency id="Newtonsoft.Json" version="11.0.2" />
-      <dependency id="Newtonsoft.Json.Schema" version="3.0.10" />
+      <dependency id="Newtonsoft.Json" version="12.0.3" />
+      <dependency id="Newtonsoft.Json.Schema" version="3.0.13" />
       <dependency id="System.Management.Automation.dll" version="10.0.10586.0" />
-      <dependency id="log4net" version="2.0.8" />
+      <dependency id="log4net" version="2.0.12" />
+      <dependency id="dotNetRDF" version="2.6.0" />
+      <dependency id="HtmlAgilityPack" version="1.11.28" />
+      <dependency id="ReqIFSharp" version="2.0.0" />
+      <dependency id="System.IO.Packaging" version="5.0.0" />
+      <dependency id="DocumentFormat.OpenXml" version="2.11.3" />
     </dependencies>
   </metadata>
   <files>
+    <file src="FUPD\*" target="lib\net472\FUPD" />
     <file src="STPL\*" target="lib\net472\STPL" />
-    <file src="bin\Debug\*.dll" target="lib\net472" />  
+    <file src="..\Binaries\TreeWalk.dll" target="lib\net472" />
+    <file src="..\Binaries\TreeWalkDocx.dll" target="lib\net472" />
+    <file src="..\Binaries\TreeWalkExt.dll" target="lib\net472" />
     <file src="TreeWalk.log4net.config" target="lib\net472" />
   </files>
 </package>

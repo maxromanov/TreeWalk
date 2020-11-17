@@ -42,12 +42,12 @@ namespace TreeWalkDocxTest
             Runner.Defaults();
             TreeWalk.Runner.runnerType = "Tree";
             TreeWalk.Runner.outputProcessorType = "Merge";
-
+            /*
             TreeWalk.Runner.Run(
                 ConfigConst.MkPath("in.pptx"),
                 ConfigConst.MkPath("out.pptx"),
                  "");
-
+            */
             Logging.Info("End: MergePptxTest");
 
             Logging.SetLevel(Level.Warn);
