@@ -23,4 +23,5 @@ jobs:
       - uses: actions/checkout@v2
       - uses: nuget/setup-nuget@v1
       - run: nuget restore TreeWalk.sln
-        
+      - run: msbuild TreeWalk.sln /p:Configuration=Release
+            
