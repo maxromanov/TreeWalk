@@ -16,6 +16,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: NuGet/setup-nuget@v1.0.5
+        with:          
+          nuget-api-key:  ${{ secrets.NUGET_KEY }}
       - name: Download artifact
         uses: dawidd6/action-download-artifact@v2.10.0
         with:
@@ -25,4 +27,4 @@ jobs:
       - name: Publish 
         env:
           NUGET_KEY: ${{ secrets.NUGET_KEY }}
-        run: 'nuget push TreeWalk*.nupkg $NUGET_KEY -Source https://api.nuget.org/v3/index.json'
+        run: 'nuget push -ApiKey $env:NUGET_KEY -Source https://api.nuget.org/v3/index.json TreeWalk*.nupkg '
