@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>$id$</id>
-    <version>$version$</version>
-    <title>$title$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
+    <id>TreeWalk</id>
+    <version>1.0.9</version>
+    <title>TreeWalk</title>
+    <authors>maxromanov</authors>
+    <owners>maxromanov</owners>
     <licenseUrl>https://raw.githubusercontent.com/maxromanov/TreeWalk/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/maxromanov/TreeWalk</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
+    <description>Utility for walking of JSON and XML for merge and diff proposes</description>
     <releaseNotes>Initial version</releaseNotes>
     <copyright>GNU GPL v3</copyright>
     <tags>XML JSON Merge Diff</tags>
