@@ -21,4 +21,15 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-              
+      - uses: nuget/setup-nuget@v1
+      - uses: microsoft/setup-msbuild@v1
+      - run: nuget restore TreeWalk.sln
+      - run: msbuild TreeWalk.sln /p:Configuration=Release
+      - run: ' pwd '
+      - run: '& "$(vswhere -property installationPath)\Common7\IDE\CommonExtensions\Microsoft\TestWindow\VSTest.Console.exe" ./Binaries/TreeWalkTest.dll ./Binaries/TreeWalkDocxTest.dll /Logger:trx'
+      - run: nuget pack ./TreeWalk/TreeWalk.nuspec -BasePath ./Binaries/
+      - uses: actions/upload-artifact@v2.2.1
+        with:
+         name: "TreeWalk.Nuget"
+         path: .\TreeWalk\*.nuget
+
