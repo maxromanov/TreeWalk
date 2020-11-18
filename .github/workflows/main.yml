@@ -25,8 +25,9 @@ jobs:
       - uses: microsoft/setup-msbuild@v1
       - run: nuget restore TreeWalk.sln
       - run: msbuild TreeWalk.sln /p:Configuration=Release
-      - run: '& "$(vswhere -property installationPath)\Common7\IDE\MSTest.exe" /testcontainer:TreeWalkTest.dll /testcontainer:TreWalkDocxTest.dll '
-      - run: nuget pack .\TreeWalk\TreeWalk.csproj 
+      - run: ' pwd '
+      - run: '& "$(vswhere -property installationPath)\Common7\IDE\MSTest.exe" /testcontainer:./Binaries/TreeWalkTest.dll /testcontainer:./Binaries/TreeWalkDocxTest.dll '
+      - run: nuget pack ./TreeWalk/TreeWalk.csproj 
       - uses: actions/upload-artifact@v2.2.1
         with:
          name: "TreeWalk.Nuget"
