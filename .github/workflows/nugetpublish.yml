@@ -19,7 +19,7 @@ jobs:
       - name: Download artifact
         uses: dawidd6/action-download-artifact@v2.10.0
         with:
-          workflow: CI
+          workflow: main.yml
           name: TreeWalk.Nuget      
           branch: master          
       - name: Publish 
