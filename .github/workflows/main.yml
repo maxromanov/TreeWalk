@@ -24,12 +24,11 @@ jobs:
       - uses: nuget/setup-nuget@v1
       - uses: microsoft/setup-msbuild@v1
       - run: nuget restore TreeWalk.sln
-      - run: msbuild TreeWalk.sln /p:Configuration=Release
-      - run: ' pwd '
+      - run: msbuild TreeWalk.sln /p:Configuration=Release      
       - run: '& "$(vswhere -property installationPath)\Common7\IDE\CommonExtensions\Microsoft\TestWindow\VSTest.Console.exe" ./Binaries/TreeWalkTest.dll ./Binaries/TreeWalkDocxTest.dll /Logger:trx'
       - run: nuget pack ./TreeWalk/TreeWalk.nuspec -BasePath ./Binaries/
       - uses: actions/upload-artifact@v2.2.1
         with:
          name: "TreeWalk.Nuget"
-         path: .\TreeWalk\*.nuget
+         path: ./*.nupkg
 
