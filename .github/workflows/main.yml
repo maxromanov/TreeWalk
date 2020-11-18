@@ -26,8 +26,8 @@ jobs:
       - run: nuget restore TreeWalk.sln
       - run: msbuild TreeWalk.sln /p:Configuration=Release
       - run: ' pwd '
-      - run: '& "$(vswhere -property installationPath)\Common7\IDE\MSTest.exe" /testcontainer:./Binaries/TreeWalkTest.dll /testcontainer:./Binaries/TreeWalkDocxTest.dll '
-      - run: nuget pack ./TreeWalk/TreeWalk.csproj 
+      - run: '& "$(vswhere -property installationPath)\Common7\IDE\CommonExtensions\Microsoft\TestWindow\VSTest.Console.exe" ./Binaries/TreeWalkTest.dll ./Binaries/TreeWalkDocxTest.dll /Logger:trx'
+      - run: nuget pack ./TreeWalk/TreeWalk.nuspec -BasePath ./Binaries/
       - uses: actions/upload-artifact@v2.2.1
         with:
          name: "TreeWalk.Nuget"
