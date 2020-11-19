@@ -18,13 +18,21 @@ namespace TreeWalk
 
         private OutputProcessorType processorType = OutputProcessorType.Merge;
 
+        public DifAndMerge(string OutExt, string OutputFile, OutputProcessorType procType)
+        {
+            this.processorType = procType;
+            target = InputTreeNodeCreator.Create(OutExt,OutputFile);
+            InitDiffOutput(OutputFile);
+        }
         public DifAndMerge(string OutputFile,OutputProcessorType procType)
         {
             this.processorType = procType;
-            string ext = Path.GetExtension(OutputFile);
+            target = InputTreeNodeCreator.Create(OutputFile);
+            InitDiffOutput(OutputFile);
+        }
 
-            target = InputTreeNode.Create(OutputFile); 
-
+        private void InitDiffOutput(string OutputFile)
+        {
             if (processorType == OutputProcessorType.DifAndMerge)
             {
                 string differenceName = Path.ChangeExtension(OutputFile, "diff.json");

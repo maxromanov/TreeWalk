@@ -157,13 +157,7 @@ namespace TreeWalk
             childs = new InputTreeNodeCollection(this);
             fileName = Name;
         }
-
-        public static InputTreeNode Create(string file_name)
-        {
-            return InputTreeNodeCreator.Create(file_name);
-           
-        }
-
+        
         public virtual InputTreeNode CreateChild(object childObj)
         {
             throw new NotImplementedException();

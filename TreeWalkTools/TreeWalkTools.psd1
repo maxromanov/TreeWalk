@@ -12,7 +12,7 @@
 RootModule = 'TreeWalkTools.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0.7'
+ModuleVersion = '1.0.11'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()

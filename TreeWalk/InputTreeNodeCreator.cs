@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using TreeWalk.XML;
 
 namespace TreeWalk
 {
@@ -21,16 +22,21 @@ namespace TreeWalk
 
 
 
-        internal static InputTreeNode Create(string file_name)
+        public static InputTreeNode Create(string file_name)
         {
             string ext = Path.GetExtension(file_name);
+            return Create(ext, file_name);
+        }
+
+        public static InputTreeNode Create(string ext, string file_name)
+        {
             if (ext == ".xml") return new XMLInputNode(file_name);
             if (ext == ".json") return new JSONInputTreeNode(file_name);
             if (ext == ".ocds") return new OCDSInputTreeNode(file_name);
 
-            if(extTypes.ContainsKey(ext))
+            if (extTypes.ContainsKey(ext))
             {
-            
+
                 string type_name = extTypes[ext];
                 Type node_type = AppDomain.CurrentDomain.GetAssemblies()
                                    .SelectMany(x => x.GetTypes())

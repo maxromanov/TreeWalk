@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>TreeWalk</id>
-    <version>1.0.9</version>
+    <version>1.0.11</version>
     <title>TreeWalk</title>
     <authors>maxromanov</authors>
     <owners>maxromanov</owners>
@@ -14,23 +14,24 @@
     <copyright>GNU GPL v3</copyright>
     <tags>XML JSON Merge Diff</tags>
     <dependencies>
-      <dependency id="Newtonsoft.Json" version="12.0.3" />
-      <dependency id="Newtonsoft.Json.Schema" version="3.0.13" />
-      <dependency id="System.Management.Automation.dll" version="10.0.10586.0" />
-      <dependency id="log4net" version="2.0.12" />
-      <dependency id="dotNetRDF" version="2.6.0" />
-      <dependency id="HtmlAgilityPack" version="1.11.28" />
-      <dependency id="ReqIFSharp" version="2.0.0" />
-      <dependency id="System.IO.Packaging" version="5.0.0" />
-      <dependency id="DocumentFormat.OpenXml" version="2.11.3" />
+      <group targetFramework=".NETFramework4.7.2">
+        <dependency id="Newtonsoft.Json" version="12.0.3" />
+        <dependency id="Newtonsoft.Json.Schema" version="3.0.13" />
+        <dependency id="System.Management.Automation.dll" version="10.0.10586.0" />
+        <dependency id="log4net" version="2.0.12" />
+        <dependency id="dotNetRDF" version="2.6.0" />
+        <dependency id="HtmlAgilityPack" version="1.11.28" />
+        <dependency id="ReqIFSharp" version="2.0.0" />
+        <dependency id="System.IO.Packaging" version="5.0.0" />
+        <dependency id="DocumentFormat.OpenXml" version="2.11.3" />
+      </group>
     </dependencies>
   </metadata>
   <files>
     <file src="FUPD\*" target="lib\net472\FUPD" />
     <file src="STPL\*" target="lib\net472\STPL" />
-    <file src="..\Binaries\TreeWalk.dll" target="lib\net472" />
-    <file src="..\Binaries\TreeWalkDocx.dll" target="lib\net472" />
-    <file src="..\Binaries\TreeWalkExt.dll" target="lib\net472" />
+    <file src="..\Binaries\*.dll" target="lib\net472" />
+    <file src="..\Binaries\*.pdb" target="lib\net472" />
     <file src="TreeWalk.log4net.config" target="lib\net472" />
   </files>
 </package>

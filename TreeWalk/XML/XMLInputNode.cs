@@ -8,8 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Schema;
+using TreeWalk.XML;
 
-namespace TreeWalk
+namespace TreeWalk.XML
 {
 
     public class XMLInputAttribute : InputTreeAttribute
@@ -56,6 +57,7 @@ namespace TreeWalk
             settings.ValidationEventHandler += new ValidationEventHandler(ValidationCallBack);
             settings.XmlResolver = new XmlUrlResolver();
             settings.Schemas.XmlResolver = new XmlUrlResolver();
+            
 
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11  
                 | SecurityProtocolType.Tls12  | SecurityProtocolType.Ssl3 ;
@@ -67,11 +69,15 @@ namespace TreeWalk
 
             reader.Close();
             
+            if(this.document.Schemas.Count == 0)
+            {
+                this.document.Schemas.Add(new XmlSchema());
+            }
+
             var nsmgr = new XmlNamespaceManager(this.document.NameTable);
             nsmgr.AddNamespace("xsl", "http://www.w3.org/1999/XSL/Transform");
 
-            
-            
+            this.document.Validate(ValidationCallBack);
                         
         }
 
@@ -139,13 +145,13 @@ namespace TreeWalk
                             if (a.SchemaInfo.SchemaType.Datatype.TokenizedType == XmlTokenizedType.ID) {
                                 if (id_filter == "") id_filter += "[";
                                 else id_filter += " and ";
-                                id_filter += "@" + a.LocalName + "='" + a.Value.ToString() + "'";
+                                id_filter += "@" + a.LocalName + "=\"" + a.Value.ToString() + "\"";
                             }
                             else if (a.SchemaInfo.SchemaAttribute.Use == XmlSchemaUse.Required )
                             {
                                 if (id_filter == "") id_filter += "[";
                                 else id_filter += " and ";
-                                id_filter += "@" + a.LocalName + "='" + a.Value.ToString() + "'";
+                                id_filter += "@" + a.LocalName + "=\"" + a.Value.ToString() + "\"";
                             }
                         }
                     }
@@ -154,18 +160,9 @@ namespace TreeWalk
                 {
                     foreach (XmlAttribute a in e.Attributes)
                     {
-                        if (a.SchemaInfo != null)
-                        {
-                            if (a.SchemaInfo.SchemaType != null)
-                            {
-                                if (a.SchemaInfo.SchemaType.Datatype.TokenizedType == XmlTokenizedType.None)
-                                {
-                                    if (id_filter == "") id_filter += "[";
-                                    else id_filter += " and ";
-                                    id_filter += "[@" + a.LocalName + "='" + a.Value.ToString() + "']";                                    
-                                }
-                            }
-                        }
+                        if (id_filter == "") id_filter += "[";
+                        else id_filter += " and ";                        
+                        id_filter += "@" + a.LocalName + "=\"" + a.Value.ToString() + "\"";                        
                     }
                 }
                 if (id_filter != "") id_filter += "]";
@@ -247,7 +244,9 @@ namespace TreeWalk
             XmlElement e = current ?? document.DocumentElement;
             if (context != null)
             {
-                return new XMLInputNode(this, (XmlElement)((IEnumerator)context).Current);
+                object c = ((IEnumerator)context).Current;
+                if (c is XmlText) return new XMLInputTextNode(this,(XmlText)c);
+                return new XMLInputNode(this, (XmlElement)c);
             }
             return base.GetCurrentChild(ref context);
         }
@@ -292,28 +291,20 @@ namespace TreeWalk
                     if (a.SchemaInfo.SchemaType != null)    {
                         if (a.SchemaInfo.SchemaType.Datatype.TokenizedType == XmlTokenizedType.ID)
                         {
-                            return "__" + a.LocalName + "='" + a.Value.ToString() + "'";
+                            return "__" + a.LocalName + "=\"" + a.Value.ToString() + "\"";
                         }
                     }
                 }
             }
 
-
+            string result_id = "__";
             foreach (XmlAttribute a in e.Attributes)
             {
-                if (a.SchemaInfo != null)
-                {
-                    if (a.SchemaInfo.SchemaType != null)
-                    {
-                        if (a.SchemaInfo.SchemaType.Datatype.TokenizedType == XmlTokenizedType.None)
-                        {
-                            return "__" + a.LocalName + "='" + a.Value.ToString() + "'";
-                        }
-                    }
-                }
-            }
+                if (result_id != "__") result_id += " and ";
+                result_id += a.LocalName + "=\"" + a.Value.ToString() + "\"";                
+            }            
 
-            return base.getIDasString();
+            return result_id;
         }
 
         public override InputTreeNode addChild(string path, string id)
@@ -326,22 +317,38 @@ namespace TreeWalk
             XmlElement child = null;
             foreach(InputPathSegment  s in r.Segments)
             {
-                child = doc.CreateElement(s.Name,e.NamespaceURI);
-                child = (XmlElement)e.AppendChild(child);
+                if (s.Query.StartsWith("text()="))   {
+                    child = e.ChildNodes.OfType<XmlElement>().FirstOrDefault(i => i.LocalName == s.Name);
+                    if (child == null)   {
+                        child = doc.CreateElement(s.Name, e.NamespaceURI);
+                        child = (XmlElement)e.AppendChild(child);
+                    }
+                }  else  {
+                    child = doc.CreateElement(s.Name, e.NamespaceURI);
+                    child = (XmlElement)e.AppendChild(child);
+                }                
                 if(s.Query != "")
                 {
                     string [] keys = s.Query.Split(new[] { " and " }, StringSplitOptions.None);
                     foreach (string keystr in keys)
                     {
-                        string[] key = keystr.Substring(1).Split('=');
-                        XmlAttribute a = doc.CreateAttribute(key[0]);
-                        a.Value = key[1].Trim('\'');
-                        child.Attributes.Append(a);
+                        if(keystr.StartsWith("text()="))
+                        {
+                            string text_value = keystr.Substring(7).Trim('"');
+                            child.InnerText = text_value;
+                        }
+                        else
+                        {
+                            string[] key = keystr.Substring(1).Split('=');
+                            XmlAttribute a = doc.CreateAttribute(key[0]);
+                            a.Value = key[1].Trim('\"');
+                            child.Attributes.Append(a);
+                        }                        
                     }
                 }
-                e = child;
-            }
-            doc.Validate(ValidationCallBack, e);
+                e = child;                
+            }            
+            doc.Validate(ValidationCallBack);
             if (child != null) return new XMLInputNode(this, child);
             return null;
         }

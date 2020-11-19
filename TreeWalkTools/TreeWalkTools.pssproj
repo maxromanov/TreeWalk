@@ -27,6 +27,7 @@
   </PropertyGroup>
   <ItemGroup />
   <ItemGroup>
+    <Compile Include="Update-Dir2Dir.ps1" />
     <Compile Include="Merge-Dir2Dir.ps1" />
     <Compile Include="Merge-Json.ps1" />
     <Compile Include="Merge-Xml2Xml.ps1" />

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Lifetime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -56,11 +57,11 @@ namespace TreeWalk
         {
             if( inputType != "")
             {
-
+                walker.root_input = InputTreeNodeCreator.Create(inputType,InputPath);
             }
             else if(Path.HasExtension(InputPath))
             {
-               walker.root_input = InputTreeNode.Create(InputPath);
+               walker.root_input = InputTreeNodeCreator.Create(InputPath);
             }
             else if( Directory.Exists(InputPath) )
             {
@@ -127,22 +128,26 @@ namespace TreeWalk
 
         private static void CreateProcessors(string OutputPath)
         {
+            string ext = "";
+            if (inputType != "") ext = inputType;
+            else ext = Path.GetExtension(OutputPath);
+            
             string [] procChain = m_outputProcessorType.Split(';');
             if(procChain.Length > 1)
             {
                 walker.output = new OutProcChain(OutputPath);
                 foreach (string proc in procChain)
                 {
-                    ((OutProcChain)walker.output).AddProcessor(CreateProcessor(OutputPath,proc));
+                    ((OutProcChain)walker.output).AddProcessor(CreateProcessor(ext,OutputPath,proc));
                 }
             }
             else
             {
-                walker.output = CreateProcessor(OutputPath, m_outputProcessorType);
+                walker.output = CreateProcessor(ext,OutputPath, m_outputProcessorType);
             }
         }
 
-        private static OutputProcessor CreateProcessor(string outputPath,string processorType)
+        private static OutputProcessor CreateProcessor(string outputExt, string outputPath,string processorType)
         {
             OutputProcessorType proc = (OutputProcessorType)Enum.Parse(typeof(OutputProcessorType), processorType);
             if (m_runnerOutType == OutputProcessorType.None) m_runnerOutType = proc;
@@ -155,8 +160,8 @@ namespace TreeWalk
                 case OutputProcessorType.XmlFile:
                     break;
                 case OutputProcessorType.T4Dir:         return new T4DirProcessor(outputPath);                    
-                case OutputProcessorType.DifAndMerge:   return new DifAndMerge(outputPath, OutputProcessorType.DifAndMerge);
-                case OutputProcessorType.Merge:         return new DifAndMerge(outputPath, OutputProcessorType.Merge);
+                case OutputProcessorType.DifAndMerge:   return new DifAndMerge(outputExt,outputPath, OutputProcessorType.DifAndMerge);
+                case OutputProcessorType.Merge:         return new DifAndMerge(outputExt, outputPath, OutputProcessorType.Merge);
                 case OutputProcessorType.QueryPSScript: return new PSOutputProcessor(outputPath);
                 case OutputProcessorType.PSScript:      return new PSOutputProcessor(outputPath);
                 default:
