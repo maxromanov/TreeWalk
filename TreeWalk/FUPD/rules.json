@@ -1,6 +1,16 @@
 {
   "id": "update_dir_copy",
   "queries": {
+    "sln_ignore": {
+      "query": "*.sln",
+      "query_type": "WildcardPattern",
+      "result": "false"
+    },
+    "csproj": {
+      "query": "*.csproj",
+      "query_type": "WildcardPattern",
+      "result": "false"
+    },
     "default": {
       "query": "*.*",
       "query_type": "WildcardPattern",

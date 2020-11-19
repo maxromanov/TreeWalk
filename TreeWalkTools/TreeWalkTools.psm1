@@ -13,10 +13,11 @@ $DllPath = [System.IO.Path]::GetDirectoryName($TreeWalkPackage.Source) + "\lib\n
 $TreeWalkPath = [System.IO.Path]::GetDirectoryName($TreeWalkPackage.Source) + "\lib\net472\"
 Add-Type -Path $DllPath 
 
+. "$PSScriptRoot\Merge-AsXml2Xml.ps1"
 . "$PSScriptRoot\Merge-Xml2Xml.ps1"
 . "$PSScriptRoot\Merge-Dir2Dir.ps1"
 . "$PSScriptRoot\Merge-Json.ps1"
 . "$PSScriptRoot\Update-Dir2Dir.ps1"
 
-Export-ModuleMember -Function 'Merge-Xml2Xml', 'Merge-Dir2Dir', 'Merge-Json', 'Update-Dir2Dir'
+Export-ModuleMember -Function 'Merge-Xml2Xml', 'Merge-Dir2Dir', 'Merge-Json', 'Update-Dir2Dir', 'Merge-AsXml2Xml'
 Export-ModuleMember -Variable 'TreeWalkPath'

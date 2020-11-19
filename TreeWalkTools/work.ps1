@@ -21,4 +21,4 @@
 
 #Get-Module -Name @('PackageManagement', 'PowerShellGet');
 
-Publish-Module -Path .\TreeWalkTools\ -NuGetApiKey "oy2bxug4vqgqcnxmugxq3n7lllonwe6ergxktuenpqckve" 
+ 
